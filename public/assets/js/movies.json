@@ -1,0 +1,179 @@
+var netflix = 
+    [
+    {
+        "Name": "Money Hesit",
+        "Description": "The Professor is a fictional character in the Netflix series Money Heist, portrayed by Álvaro Morte.",
+        "URL": "./Assets/IMG/money-heist.PNG",
+        "link": "./money-heist.html"
+    },
+    {
+        "Name": "Cobra Kai",
+        "Description": "Thirty four years after events of the 1984 All Valley Karate Tournament, a down-and-out Johnny Lawrence,",
+        "URL": "./Assets/IMG/Cobra-Kai.PNG",
+        "link": "./cobrakai.html"
+    },
+    {
+        "Name": "BloodHounds",
+        "Description": "Two young boxers band together with a benevolent moneylender to take down a ruthless loan shark who preys on the financially desperate.",
+        "URL": "./Assets/IMG/Blood-Hounds.PNG",
+        "link": "./bloodhounds.html"
+    },
+    {
+        "Name": "peakyBlinder",
+        "Description": "Tommy Shelby, a dangerous man, leads the Peaky Blinders, a gang based in Birmingham. Soon, Chester Campbell, an inspector",
+        "URL": "./Assets/IMG/Peaky-Blinder.PNG",
+        "link": "./peaky-blinder.html"
+    },
+    {
+        "Name": "StrangersThings",
+        "Description": "In 1980s Indiana, a group of young friends witness supernatural forces and secret government exploits. As they search for answers",
+        "URL": "./Assets/IMG/Stranger-Things.PNG",
+        "link": "./strangers-things.html"
+    },
+    {
+        "Name": "Lucifer",
+        "Description": "Based on characters created by Neil Gaiman, Sam Kieth and Mike Dringenberg, this series follows Lucifer, the original fallen angel, who has become dissatisfied with his life in hell. After abandoning",
+        "URL": "./Assets/IMG/Lucifer.PNG",
+        "link": "./Lucifer.html"
+    }
+];
+
+var appleTV =
+    [
+    {
+        "Name": "Silo",
+        "Description": "In a ruined and toxic future, a community exists in a giant underground silo that plunges hundreds of stories deep; there, people live in a society",
+        "URL": "./assets/img/Silo.PNG",
+        "link": "./silo.html"
+    },
+    {
+        "Name": "Black Bird",
+        "Description": "As Jimmy Keene begins a 10-year prison sentence, he gets an incredible offer: if he can elicit a confession from suspected killer Larry Hall",
+        "URL": "./assets/img/Black Bird.PNG",
+        "link": "./black-bird.html"
+    },
+    {
+        "Name": "Hijack",
+        "Description": "When Flight KA29 is hijacked during its seven-hour journey from Dubai to London, corporate negotiator Sam Nelson tries to use his professional skills to save",
+        "URL": "./assets/img/Hijack.PNG",
+        "link": "./hijack.html"
+    },
+    {
+        "Name": "Invansion",
+        "Description": "Earth is visited by an alien species that threatens humanity's existence; events unfold in real time through the eyes of five ordinary people",
+        "URL": "./assets/img/Invansion.PNG",
+        "link": "./invashion.html"
+    },
+    {
+        "Name": "The Morning Show",
+        "Description": "The latest updates on topics such as fitness, movie reviews, blog updates, horoscopes as well as other events that take place in the country.",
+        "URL": "./assets/img/Thee Morning Show.PNG",
+        "link": "./Themorning.html"
+    },
+    {
+        "Name": "See",
+        "Description": "In a society surviving without the sense of sight, a set of twins are born with the ability to see. However, Baba Voss, a warrior and the leader of a tribe",
+        "URL": "./assets/img/See.PNG",
+        "link": "./see.html"
+    }
+];
+
+var AmazonPrime =
+    [
+    {
+        "Name": "Mirzapur",
+        "description": "Akhandanand Tripathi made millions exporting carpets and became the mafia boss of Mirzapur. His son Munna, an unworthy, power-hungry heir,",
+        "URl": "./Assets/IMG/mirzapur.PNG",
+        "link": "./mirzapur.html"
+    },
+    {
+        "Name": "TheFamilyMen",
+        "description": "Srikant Tiwari is a middle-class man who also serves as a world-class spy; he tries to balance his familial responsibilities with those at the highly",
+        "URl": "./Assets/IMG/The-Family-Men.PNG",
+        "link": "./thefamilyman.html"
+
+    },
+    {
+        "Name": "Paatlo lok",
+        "description": "A cynical inspector is tasked with investigating a high-profile case which leads him into a dark realm of the underworld.",
+        "URl": "./Assets/IMG/Paatlo-lok.PNG",
+        "link": "./paatal-lok.html"
+    },
+    {
+        "Name": "Hostel daze",
+        "description": "Four classmates develop a lasting bond as they strive to survive their first semester in an Indian hostel as their lives intersect with other hostel clients.",
+        "URl": "./Assets/IMG/Hostel-daze.PNG",
+        "link": "./hostel-daze.html"
+    },
+    {
+        "Name": "Afsos",
+        "description": "Nakul's only goal in life is to finish it. After several failed suicide attempts, he pays for his own death. Upadhyay, a deadly assassin is assigned to get the job done, but Nakul has a change of heart",
+        "URl": "./Assets/IMG/Afsos.PNG",
+        "link": "#"
+    },
+    {
+        "Name": "The forgotton Army",
+        "description": "Summaries. Lieutenant Sodhi and his army fight for Indian Independence during World War II as part of the Indian National Army;",
+        "URl": "./theforgottonarmy.html"
+    }
+];
+
+var disney = 
+    [
+    {
+        "Name": "The Sea Beast",
+        "Description": "Terrifying creatures roam the seas and the monster hunters are heroes. None is more beloved than the great Jacob Holland. When young Maisie Brumble joins",
+        "URL": "./Assets/img/The-Sea-Beast.PNG",
+        "link": "/sea.html"
+    },
+    {
+        "Name": "Over The Moon",
+        "Description": "Adventurous young Fei Fei builds a rocket ship and flies it to the moon to meet mythical goddess Chang.",
+        "URL": "./Assets/img/Over-The-Moon.PNG",
+        "link": "#"
+    },
+    {
+        "Name": "Next Gen",
+        "Description": "A rebellious girl and a runaway combat robot unite to stop a madman's technological plan for world.",
+        "URL": "./Assets/img/Next-Gen.PNG",
+        "link": "#"
+    },
+    {
+        "Name": "Wish Dragon",
+        "Description": "Determined teen Din is longing to reconnect with his childhood best friend when he meets a wish-granting dragon that shows him the magic of possibilities.",
+        "URL": "./Assets/img/Wish-Deagon.PNG"
+    },
+    {
+        "Name": "Vivo",
+        "Description": "Vivo Communication Technology Co. Ltd. is a Chinese multinational technology company headquartered in Dongguan, Guangdong that designs",
+        "URL": "./Assets/img/Vivo.PNG"
+    },
+    {
+        "Name": "Mickey Mouse",
+        "Description": "Mickey Mouse is an American cartoon character co-created in 1928 by Walt Disney and Ub Iwerks. The longtime mascot of The Walt Disney Company, Mickey is an anthropomorphic mouse",
+        "URL": "./Assets/img/Mickey-Mouse.PNG"
+    }
+];
+
+var favs = [
+    {
+        "IMG": "./Assets/IMG/money-heist.PNG",
+        "link": "./money-heist.html"
+    },
+    {
+        "IMG": "./Assets/IMG/Cobra-Kai.PNG",
+        "link": "./cobrakai.html"
+    },
+    {
+        "IMG": "./Assets/IMG/Blood-Hounds.PNG",
+        "link": "./bloodhounds.html"
+    },
+    {
+        "IMG": "./Assets/IMG/Peaky-Blinder.PNG",
+        "link": "./peaky-blinder.html"
+    },
+    {
+        "IMG": "./Assets/IMG/Stranger-Things.PNG",
+        "link": "./strangers-things.html"
+    }
+]

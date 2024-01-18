@@ -1,0 +1,477 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background:#020301 ;
+    color: #FFF;
+}
+.main-container{
+    margin-left: 50px;
+    /* margin-top: 50px; */
+}
+
+.languag-btn{
+display: inline-flex;
+align-items: center;
+background: transparent;
+border: 1px solid #FFF;
+padding: 7px 10px;
+
+}
+.languag-btn img{
+    width: 10px;
+    margin-left: 10px;
+
+}
+.email-signup{
+    background: #fff;
+    border-radius: 4px;
+    display: flex;
+     align-items: center;
+     margin-top: 30px;
+     overflow: hidden;
+}
+.email-signup input{
+    flex: 1;
+    border: 0;
+    outline: 0;
+    margin-left: 20px;
+}
+.email-signup button{
+    background: #e2ee05;
+    border: 0;
+    outline: 0;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 15px 30px;
+    border-radius: 4px;
+}
+.email-signup button{
+    color: #050505;
+}
+/* --------------features----------- */
+.features{
+    padding: 50px  12px;
+    font-size: 22px;
+}
+.row{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 50px 0;
+
+}
+.text-col{
+    flex-basis: 50%;
+    margin-bottom: 20px;
+
+}
+.img-col{
+    flex-basis: 50%;
+    margin-bottom: 20px;
+}
+.img-col img{
+    display: block;
+    width: 90%;
+    margin: auto;
+
+}
+.features h2{
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+/* -----------faq--------- */
+.faq{
+    padding: 10px 12px;
+    text-align: center;
+    font-size: 18px;
+    background-color: #151515;
+}
+.faq h2{
+    font-weight: 500;
+    font-size: 40px;
+}
+.accordion{
+    margin: 60px auto;
+    width: 100%;
+    max-width: 750px;
+
+}
+.accordion li{
+    list-style: none;
+    width: 100%;
+    padding: 5px;
+}
+.accordion li label{
+    display: flex ;
+    align-items: center;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    background: #303030;
+    margin-bottom: 2px;
+    cursor: pointer;
+    position: relative;
+
+}
+label::after{
+    content:'+';
+    font-size: 34px;
+    position: absolute;
+    right: 20px;
+    transition: transform 0.5s;
+}
+input[type="radio"]{
+    display: none;
+}
+.accordion .content{
+    background-color: #303030;
+    text-align: left;
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s, padding 0.5s;
+
+}
+.accordion input[type="radio"]:checked + label + .content{
+    max-height: 600px;
+    padding: 30px 20px;
+
+}
+.accordion input[type="radio"]:checked + label::after{
+    transform: rotate(135deg);
+}
+.faq .email-signup{
+    max-width: 600px;
+    margin: 20px auto 60px;
+
+}
+.faq small{
+    font-size: 13px;
+
+}
+/* --------------------------------footer------- */
+.footer{
+    padding: 50px 15% 10px;
+    border-top: 6px solid #333;
+    color: #777;
+}
+.footer h2{
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+.footer .col{
+    flex-basis: 25%;
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+.footer .col a{
+    display: block;
+    text-decoration: none;
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.footer .row{
+    align-items: flex-start;
+    padding: 10px 0;
+}
+.footer .languag-btn{
+    color: #FFF;
+    padding: 10px 20px;
+    border-radius: 3px;
+}
+.CopyRight-text{
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+/* ----------------------media-quearies-for-small-screen------- */
+@media only screen and (max-width:600px){
+    .logo{
+        width: 100px;
+
+    }
+    nav button{
+        padding: 5px 10px;
+
+    }
+    nav .languag-btn{
+        padding: 4px 8px;
+    }
+    .header-content{
+        position: unset;
+        transform: none;
+        padding-top: 150px;
+
+    }
+    .header-content h1{
+        font-size: 30px;
+    }
+    .email-signup button{
+        font-size: 12px;
+        padding: 10px 15px;
+    }
+    .text-col, .img-col{
+        flex-basis: 100%;
+    }
+    .features h2{
+        font-size: 30px;
+    }
+    .features p{
+        font-size: 30px;
+    }
+    .row:nth-child(2),.row:nth-child(4){
+        flex-direction: column-reverse;
+    }
+    .features .row{
+        padding: 10px 0;
+    }
+    .faq h2{
+        font-size: 20px;
+    }
+    .accordion .content{
+        font-size: 14px;
+    }
+    .accordion li label{
+        padding: 10px ;
+        font-size: 14px;
+    }
+    label::after{
+        font-size: 22px;
+    }
+}
+/* -----------------sidebar------------- */
+.navbar {
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .navbar-container {
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    height: 100%;
+    color: white;
+    font-family: "Sen", sans-serif;
+  }
+  
+  .logo-container {
+    flex: 1;
+  }
+  
+  .logo a {
+    font-size: 30px;
+    color: #e9de09;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .menu-container {
+    flex: 6;
+  }
+  
+  .menu-list {
+    display: flex;
+    list-style: none;
+  }
+  
+  .menu-list-item {
+    margin-right: 30px;
+    cursor: pointer;
+  }
+  
+  .menu-list-item.active {
+    font-weight: bold;
+  }
+  
+  .profile-container {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
+  .profile-container i {
+    cursor: pointer;
+  }
+  
+  .profile-text-container {
+    margin: 0 20px;
+  }
+  
+  .profile-picture {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .toggle {
+    width: 40px;
+    height: 20px;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+  }
+  
+  .toggle-icon {
+    color: goldenrod;
+  }
+  
+  .toggle-ball {
+    width: 18px;
+    height: 18px;
+    background-color: black;
+    position: absolute;
+    right: 1px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 1s ease all;
+  }
+  
+  /* Navbar Styling Ends*/
+  
+  
+  /* Sidebar Starts */
+  
+  .sidebar {
+    width: 50px;
+    height: 100%;
+    background-color:black;
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+    z-index: 25px;
+  }
+  
+  .sidebar i {
+    cursor: pointer;
+  }
+  
+  .left-menu-icon {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+  
+  .sidebar img{
+    position: absolute;
+    bottom: 10%;
+  }
+  .sidebar a:nth-child(6){
+    position: absolute;
+    bottom: 12%;
+  }
+  /* ---------topnav-------- */
+  .navbar {
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .navbar-container {
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    height: 100%;
+    color: white;
+    font-family: "Sen", sans-serif;
+  }
+  
+  .logo-container {
+    flex: 1;
+  }
+  
+  .logo a {
+    font-size: 30px;
+    color: #e9de09;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .menu-container {
+    flex: 6;
+  }
+  
+  .menu-list {
+    display: flex;
+    list-style: none;
+  }
+  
+  .menu-list-item {
+    margin-right: 30px;
+    cursor: pointer;
+  }
+  
+  .menu-list-item.active {
+    font-weight: bold;
+  }
+  
+  .profile-container {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
+  .profile-container i {
+    cursor: pointer;
+  }
+  
+  .profile-text-container {
+    margin: 0 20px;
+  }
+  
+  .profile-picture {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .toggle {
+    width: 40px;
+    height: 20px;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+  }
+  
+  .toggle-icon {
+    color: goldenrod;
+  }
+  
+  .toggle-ball {
+    width: 18px;
+    height: 18px;
+    background-color: black;
+    position: absolute;
+    right: 1px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 1s ease all;
+  }
+  

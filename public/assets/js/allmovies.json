@@ -1,0 +1,167 @@
+var allmovies = [
+    {
+        "Name": "Money Heist",
+        "Description": "The Professor is a fictional character in the Netflix series Money Heist, portrayed by Álvaro Morte. He is the mastermind of the heist.",
+        "IMG": "./Assets/IMG/money-heist.PNG",
+        "URL": "./money-heist.html",
+        "Genre1": "Thriller",
+        "Genre2": "Romance",
+        "Genre3": "Drama",
+        "Release": "Today",
+        "Subcription": "Netflix"
+    },
+    {
+        "Name": "Cobra Kai",
+        "Description": "Thirty four years after events of the 1984 All Valley Karate Tournament, a down-and-out Johnny Lawrence,",
+        "IMG": "./Assets/IMG/Cobra-Kai.PNG",
+        "URL": "./cobrakai.html",
+        "Genre1": "Fantasy",
+        "Genre2": "Romance",
+        "Genre3": "Thriller",
+        "Release": "Yesterday",
+        "Subcription": "Netflix"
+    },
+    {
+        "Name": "BloodHounds",
+        "Description": "Two young boxers band together with a benevolent moneylender to take down a ruthless loan shark who preys on the financially desperate.",
+        "IMG": "./Assets/IMG/Blood-Hounds.PNG",
+        "URL": "./bloodhounds.html",
+        "Genre1": "Thriller",
+        "Genre2": "Fantasy",
+        "Genre3": "Comedy",
+        "Release": "Last Week",
+        "Subcription": "Netflix"
+    },
+    {
+        "Name": "peakyBlinder",
+        "Description": "Tommy Shelby, a dangerous man, leads the Peaky Blinders, a gang based in Birmingham. Soon, Chester Campbell, an inspector",
+        "IMG": "./Assets/IMG/Peaky-Blinder.PNG",
+        "URL": "./peaky-blinder.html",
+        "Genre1": "Drama",
+        "Genre2": "Horror",
+        "Genre3": "Western",
+        "Release": "Last-Month",
+        "Subcription": "Netflix"
+    },
+    {
+        "Name": "StrangersThings",
+        "Description": "In 1980s Indiana, a group of young friends witness supernatural forces and secret government exploits. As they search for answers",
+        "IMG": "./Assets/IMG/Stranger-Things.PNG",
+        "URL": "./strangers-things.html",
+        "Genre1": "Fantasy",
+        "Genre2": "Comedy",
+        "Genre3": "Horror",
+        "Release": "Today",
+        "Subcription": "Netflix"
+    },
+    {
+        "Name": "Lucifer",
+        "Description": "Based on characters created by Neil Gaiman, Sam Kieth and Mike Dringenberg, this series follows Lucifer, the original fallen angel, who has become dissatisfied with his life in hell. After abandoning",
+        "IMG": "./Assets/IMG/Lucifer.PNG",
+        "URL": "./Lucifer.html",
+        "Genre1": "Thriller",
+        "Genre2": "Romance",
+        "Genre3": "Drama",
+        "Release": "Yesterday",
+        "Subcription": "Netflix"
+    },
+    {
+        "Name": "Silo",
+        "Description": "In a ruined and toxic future, a community exists in a giant underground silo that plunges hundreds of stories deep; there, people live in a society",
+        "IMG": "./assets/img/Silo.PNG",
+        "URL": "./silo.html",
+        "Genre1": "Fantasy",
+        "Genre2": "Romance",
+        "Genre3": "Thriller",
+        "Release": "Last Week",
+        "Subcription": "Netflix"
+    },
+    {
+        "Name": "Black Bird",
+        "Description": "As Jimmy Keene begins a 10-year prison sentence, he gets an incredible offer: if he can elicit a confession from suspected killer Larry Hall",
+        "IMG": "./assets/img/Black Bird.PNG",
+        "URL": "./black-bird.html",
+        "Genre1": "Thriller",
+        "Genre2": "Fantasy",
+        "Genre3": "Comedy",
+        "Release": "Last-Month",
+        "Subcription": "Netflix"
+    },
+    {
+        "Name": "Hijack",
+        "Description": "When Flight KA29 is hijacked during its seven-hour journey from Dubai to London, corporate negotiator Sam Nelson tries to use his professional skills to save",
+        "IMG": "./assets/img/Hijack.PNG",
+        "URL": "./hijack.html",
+        "Genre1": "Drama",
+        "Genre2": "Horror",
+        "Genre3": "Western",
+        "Release": "Today",
+        "Subcription": "Netflix"
+    },
+    {
+        "Name": "Invansion",
+        "Description": "Earth is visited by an alien species that threatens humanity's existence; events unfold in real time through the eyes of five ordinary people",
+        "IMG": "./assets/img/Invansion.PNG",
+        "URL": "./invashion.html",
+        "Genre1": "Fantasy",
+        "Genre2": "Comedy",
+        "Genre3": "Horror",
+        "Release": "Yesterday",
+        "Subcription": "Netflix"
+    },
+    {
+        "Name": "The Morning Show",
+        "Description": "The latest updates on topics such as fitness, movie reviews, blog updates, horoscopes as well as other events that take place in the country.",
+        "IMG": "./assets/img/Thee Morning Show.PNG",
+        "URL": "./Themorning.html",
+        "Genre1": "Thriller",
+        "Genre2": "Romance",
+        "Genre3": "Drama",
+        "Release": "Last Week",
+        "Subcription": "Netflix"
+    },
+    {
+        "Name": "See",
+        "Description": "In a society surviving without the sense of sight, a set of twins are born with the ability to see. However, Baba Voss, a warrior and the leader of a tribe",
+        "IMG": "./assets/img/See.PNG",
+        "URL": "./see.html",
+        "Genre1": "Fantasy",
+        "Genre2": "Romance",
+        "Genre3": "Thriller",
+        "Release": "Last-Month",
+        "Subcription": "Netflix"
+    },
+    {
+        "Name": "Money Heist",
+        "Description": "The Professor is a fictional character in the Netflix series Money Heist, portrayed by Álvaro Morte. He is the mastermind of the heist.",
+        "IMG": "./Assets/IMG/money-heist.PNG",
+        "URL": "./money-heist.html",
+        "Genre1": "Thriller",
+        "Genre2": "Fantasy",
+        "Genre3": "Comedy",
+        "Release": "Today",
+        "Subcription": "Netflix"
+    },
+    {
+        "Name": "Money Heist",
+        "Description": "The Professor is a fictional character in the Netflix series Money Heist, portrayed by Álvaro Morte. He is the mastermind of the heist.",
+        "IMG": "./Assets/IMG/money-heist.PNG",
+        "URL": "./money-heist.html",
+        "Genre1": "Drama",
+        "Genre2": "Horror",
+        "Genre3": "Western",
+        "Release": "Yesterday",
+        "Subcription": "Netflix"
+    },
+    {
+        "Name": "Money Heist",
+        "Description": "The Professor is a fictional character in the Netflix series Money Heist, portrayed by Álvaro Morte. He is the mastermind of the heist.",
+        "IMG": "./Assets/IMG/money-heist.PNG",
+        "URL": "./money-heist.html",
+        "Genre1": "Fantasy",
+        "Genre2": "Comedy",
+        "Genre3": "Horror",
+        "Release": "Last Week",
+        "Subcription": "Netflix"
+    }
+]

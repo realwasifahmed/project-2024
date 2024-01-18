@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Preahvihear&display=swap');
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Preahvihear', sans-serif;
+}
+
+body{
+    background-color: #151515;
+}
+
+
+.main-nav {
+
+    display: flex;
+    justify-content: space-between;
+}
+.header{
+    background-image: url('./Untitled-s2.png');
+    background-repeat: no-repeat;
+background-size: cover;
+
+
+}
+.logo {
+    display: flex;
+}
+
+.web_name {
+    margin-top: 45px;
+    font-size: 30px;
+    color: #E9DE09;
+}
+
+.nav_icons {
+    margin-top: 45px;
+    padding-left: 30px;
+}
+
+#nav_icon_movie {
+    margin-top: 40px;
+    transition: transform .2s ease;
+}
+
+#nav_icon_movie:hover {
+    transform: translateY(-8px);
+}
+
+.nav_content {
+    margin-right: 10px;
+    margin-top: 40px;
+}
+
+.fa-magnifying-glass{
+    font-size: 25px;
+    margin-right: 20px;
+    margin-bottom: -6px;
+    color: white;
+    width: 40px;
+    height: 35px;
+    border-radius: 50px;
+    border: 3px solid #FFF;
+    background: linear-gradient(270deg, rgba(233, 222, 9, 0.34) 0%, #000 76.04%);
+}
+
+.nav_content a {
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.login_link {
+    color: white;
+}
+.btn_user{
+    width: 120px;
+
+
+color: #FFF;
+font-size: 1.5em;
+border-radius: 8px;
+border: 2px solid #B8B8B8;
+background: linear-gradient(270deg, rgba(233, 222, 9, 0.34) 0%, #000 76.04%);
+}
+.btn_user:hover{
+border: 2px solid #B8B8B8;
+
+}
+.flipping-animation {
+  
+    animation: flip 2s linear infinite;
+  
+  }
+  
+
+  @keyframes flip {
+    0%, 100% {
+      transform: perspective(400px) rotateY(0deg);
+    }
+    50% {
+      transform: perspective(400px) rotateY(180deg);
+    }
+  }
+  @media (min-width: 576px) {
+    .custom-flex-sm-row {
+      flex-direction: row !important;
+    }
+  }
+
+.expiry{
+    width: 1000px;
+height: 151px;
+flex-shrink: 0;
+
+border-radius: 8px;
+border: 2px solid #B8B8B8;
+background: linear-gradient(270deg, rgba(233, 222, 9, 0.34) 0%, #000 76.04%);
+}
+
+@media (max-width: 1000px) {
+    .expiry img {
+        scale: .7;
+         /* Decrease the width when the screen size is smaller than 1000px */
+         margin-left: -800px;
+    height: auto;
+
+        }
+}
+@media (max-width: 1000px) {
+    .expiry .exp{
+        scale: .7;
+         /* Decrease the width when the screen size is smaller than 1000px */
+         margin-left: -80px;
+    height: auto;
+        }
+}
+
+@media (max-width: 770px) {
+    .expiry img {
+        scale: .6;
+         /* Decrease the width when the screen size is smaller than 1000px */
+      position: relative;
+      left: -80px;
+    height: auto;
+
+        }
+}
+
+@media (max-width: 770px) {
+    .expiry .exp{
+        scale: .7;
+         /* Decrease the width when the screen size is smaller than 1000px */
+         margin-left: -120px;
+    height: auto;
+        }
+}
+
+@media (max-width: 576px) {
+    .expiry .exp{
+        scale: .6;
+   
+         /* Decrease the width when the screen size is smaller than 1000px */
+         margin-left: -150px;
+         margin-right: 100px;
+    height: auto;
+        }
+}
+@media (max-width: 600px) {
+    .expiry {
+      
+   width: auto;
+         
+    height: auto;
+        }
+}
+@media (max-width: 450px) {
+    .expiry {
+      
+   margin-left: 20px;
+        }
+}
+@media (max-width: 770px) {
+    .expiry .butdiv{
+        scale: .7;
+         /* Decrease the width when the screen size is smaller than 1000px */
+         margin-left: -80px;
+    height: auto;
+        }
+}
+@media (max-width: 600px) {
+    .expiry .butdiv{
+        scale: .7;
+         /* Decrease the width when the screen size is smaller than 1000px */
+      
+    height: auto;
+        }
+}
+@media (max-width: 450px) {
+    .expiry .butdiv button{
+        scale: .6;
+         /* Decrease the width when the screen size is smaller than 1000px */
+  position: relative;
+left: 50px;
+    height: auto;
+        }
+}
+@media (max-width: 1000px) {
+    .expiry {
+        width: 100%;
+         /* Decrease the width when the screen size is smaller than 1000px */
+
+    height: auto;
+        }
+}
+#abc{
+    margin-left: 5px;
+}
+/* footer */
+.logo_heading{
+    color: #E9DE09;
+}
+.footer_logo{
+    margin-top: -30px;
+}
+.footer_container{
+    padding: 20px;
+}
+footer h3, hr{
+    color: #E9DE09;
+}
+footer h5{
+    color: #FFF;
+}
+footer p{
+    color: #FFF;
+}
+.footer_logo_heading{
+    font-size: 25px;
+    color: #E9DE09;
+}
+.page-footer{
+    background-image: url('./Untitled-2\ 2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+

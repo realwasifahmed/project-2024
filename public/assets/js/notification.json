@@ -1,0 +1,37 @@
+var notificationsData = [
+    {   
+        "img": "./Assets/IMG/notification1.jpg",
+        "time": "2:00 AM",
+        "name": "Hello Display Flex!",
+        "desc": "Money Height Season 5 Volumne 2 Episode 3 Will Be Live Tommorow",
+        "platform": " - Netflix"
+    },
+    {   
+        "img": "./Assets/IMG/notification1.jpg",
+        "time": "2:00 AM",
+        "name": "Hello Display Flex!",
+        "desc": "Money Height Season 5 Volumne 2 Episode 3 Will Be Live Tommorow",
+        "platform": " - Netflix"
+    },
+    {   
+        "img": "./Assets/IMG/notification1.jpg",
+        "time": "2:00 AM",
+        "name": "Hello Display Flex!",
+        "desc": "Money Height Season 5 Volumne 2 Episode 3 Will Be Live Tommorow",
+        "platform": " - Netflix"
+    },
+    {   
+        "img": "./Assets/IMG/notification1.jpg",
+        "time": "2:00 AM",
+        "name": "Hello Display Flex!",
+        "desc": "Money Height Season 5 Volumne 2 Episode 3 Will Be Live Tommorow",
+        "platform": " - Netflix"
+    },
+    {   
+        "img": "./Assets/IMG/notification1.jpg",
+        "time": "2:00 AM",
+        "name": "Hello Display Flex!",
+        "desc": "Money Height Season 5 Volumne 2 Episode 3 Will Be Live Tommorow",
+        "platform": " - Netflix"
+    },
+]
