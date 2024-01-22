@@ -282,6 +282,9 @@ The `FunctionalController` manages various functionalities related to adding and
 
 The `FunctionalController` provides essential functionality for adding, deleting, and managing artists, music files, video files, and users in the Sound Group Entertainment website. Additional functions can be added or modified based on project requirements.
 
+
+<body>
+
 <h1>Instruction To Run The Project</h1>
 
     <h2>Getting Started</h2>
@@ -349,5 +352,5 @@ The `FunctionalController` provides essential functionality for adding, deleting
 
 
   <p>Feel free to contribute to the project and make it even better!</p>
-
+</body>
 </body>
