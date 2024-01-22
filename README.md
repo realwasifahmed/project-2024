@@ -205,9 +205,7 @@ The `MainController` is responsible for handling various user and admin-related 
 
 #### Contributors
 
-- [Your Name]
-- [Contributor 2]
-- [Contributor 3]
+- Wasif Ahmed
 
 Feel free to contribute to the project and make it even better!
 
