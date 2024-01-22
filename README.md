@@ -283,76 +283,24 @@ The `FunctionalController` manages various functionalities related to adding and
 The `FunctionalController` provides essential functionality for adding, deleting, and managing artists, music files, video files, and users in the Sound Group Entertainment website. Additional functions can be added or modified based on project requirements.
 
 
-# Sound Group Entertainment Website
+# Instruction to install project
 
-## Getting Started
+### First Copy Project
+$ git clone https://github.com/realwasifahmed/project-2024.git
 
-To set up and run the Sound Group Entertainment Website project, follow these steps:
+### Go In to Folder
+$ cd project-2024
 
-### Prerequisites
+### Run Composer Command (Make [Componer]('[https://composer](https://getcomposer.org/download/)https://getcomposer.org/download/') is downloaded)
+$ composer install
 
-- Make sure you have [Composer](https://getcomposer.org/) installed on your system.
+#### Make a copy of .env.example and add your database
 
-### Installation
+### Run These Commands One By One
+$ php artisan generate:key 
+$ php artisan migrate
+$ php artisan optimize
+$ php artisan serve
 
-1. Clone the repository to your local machine:
 
-   ```bash
-   git clone <repository-url>
-Navigate to the project directory:
-
-bash
-Copy code
-cd sound-group-entertainment-website
-Install the project dependencies using Composer:
-
-bash
-Copy code
-composer install
-Configuration
-Generate a new application key:
-
-bash
-Copy code
-php artisan key:generate
-Database Setup
-Run database migrations to create the required tables:
-
-bash
-Copy code
-php artisan migrate
-Optimization
-Optimize the project for better performance:
-
-bash
-Copy code
-php artisan optimize
-Running the Development Server
-Start the development server:
-
-bash
-Copy code
-php artisan serve
-Access the application in your web browser at http://localhost:8000.
-
-Additional Notes
-Ensure that your environment is configured correctly, including database settings and other Laravel configurations.
-Customize the project as needed based on your specific requirements.
-For production deployments, consider additional steps like setting up a web server (e.g., Nginx, Apache), securing your environment, and configuring necessary environment variables.
-Run the Commands
-Manually run the following commands in your terminal:
-
-bash
-Copy code
-composer install
-php artisan key:generate
-php artisan migrate
-php artisan optimize
-php artisan serve
-Feel free to customize and expand the documentation based on your specific project needs and conventions.
-
-sql
-Copy code
-
-Copy the content above and paste it into your README.md file. Adjust the `<reposit
 </body>
