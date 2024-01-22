@@ -102,6 +102,189 @@
     <li>Mohammad Idress</li>
   </ul>
 
+
+
+  # Sound Group Entertainment Website Controllers Documentation
+
+## Main Controller
+
+### Introduction
+
+The `MainController` is responsible for handling various user and admin-related functionalities in the Sound Group Entertainment website. It manages the user pages and admin dashboard, serving as a bridge between the frontend views and the backend models.
+
+### User Pages
+
+#### getIndexPage()
+
+- **Purpose**: Renders the index page for general users.
+- **View**: `pages.index`
+
+#### getArtistPage()
+
+- **Purpose**: Renders the artist profile page.
+- **View**: `pages.artistProfile`
+
+#### getProfilePage()
+
+- **Purpose**: Renders the user profile page.
+- **View**: `pages.profile`
+
+#### getVideoPage()
+
+- **Purpose**: Renders the video page for users.
+- **View**: `pages.video`
+
+#### getRegisterPage()
+
+- **Purpose**: Renders the user registration page.
+- **View**: `pages.register`
+
+#### getLoginPage()
+
+- **Purpose**: Renders the user login page.
+- **View**: `pages.login`
+
+### Admin Dashboard
+
+#### getAdminPage()
+
+- **Purpose**: Renders the admin dashboard with statistics and latest content.
+- **View**: `admin.index`
+- **Data Passed to View**:
+  - `artistCount`: Count of artists.
+  - `userCount`: Count of registered users.
+  - `videoCount`: Count of video files.
+  - `musicsCount`: Count of music files.
+  - `latestMusic`: Latest 10 music files.
+  - `latstVideos`: Latest 10 video files.
+
+#### getAllArists()
+
+- **Purpose**: Retrieves and renders a list of all artists in the admin panel.
+- **View**: `admin.artists`
+- **Data Passed to View**:
+  - `data`: All artist records.
+
+#### getAllMusicFiles()
+
+- **Purpose**: Retrieves and renders a list of all music files in the admin panel.
+- **View**: `admin.musics`
+- **Data Passed to View**:
+  - `data`: All music file records.
+  - `Artist`: All artist records for dropdown selection.
+
+#### addMusicFiles()
+
+- **Purpose**: Renders the form to add new music files.
+- **View**: `admin.addMusic`
+
+#### getAllVideoFiles()
+
+- **Purpose**: Retrieves and renders a list of all video files in the admin panel.
+- **View**: `admin.videos`
+- **Data Passed to View**:
+  - `data`: All video file records.
+  - `Artist`: All artist records for dropdown selection.
+
+#### addVideoFiles()
+
+- **Purpose**: Renders the form to add new video files.
+- **View**: `admin.addVideos`
+
+#### getAllUsers()
+
+- **Purpose**: Retrieves and renders a list of all registered users in the admin panel.
+- **View**: `admin.users`
+- **Data Passed to View**:
+  - `data`: All user records.
+
+#### getAllAlbumns()
+
+- **Purpose**: Renders the admin page for managing albums.
+- **View**: `admin.albumns`
+
+#### Contributors
+
+- [Your Name]
+- [Contributor 2]
+- [Contributor 3]
+
+Feel free to contribute to the project and make it even better!
+
+---
+
+## Functional Controller
+
+### Introduction
+
+The `FunctionalController` manages various functionalities related to adding and deleting artists, music files, video files, and users. It also includes a function for creating albums. This controller acts as a bridge between the user interface and the backend models.
+
+### Methods
+
+#### addArtist(Request $request)
+
+- **Purpose**: Adds a new artist with an associated profile picture.
+- **Parameters**:
+  - `$request`: The HTTP request containing artist details.
+- **Files Uploaded**:
+  - `artistPicture`: Artist profile picture.
+- **Returns**: Redirects back after adding the artist.
+
+#### addMusics(Request $request)
+
+- **Purpose**: Adds new music files with associated images.
+- **Parameters**:
+  - `$request`: The HTTP request containing music details.
+- **Files Uploaded**:
+  - `AudioMusicIMage`: Music image.
+  - `AudioMusicFile`: Music audio file.
+- **Returns**: Redirects back after adding the music files.
+
+#### deleteMusic($id)
+
+- **Purpose**: Deletes a specific music file by its ID.
+- **Parameters**:
+  - `$id`: The ID of the music file to be deleted.
+- **Returns**: Redirects back after deleting the music file.
+
+#### addVideos(Request $request)
+
+- **Purpose**: Adds new video files with associated images.
+- **Parameters**:
+  - `$request`: The HTTP request containing video details.
+- **Files Uploaded**:
+  - `VideoImageFile`: Video image.
+  - `VideoFile`: Video file.
+- **Returns**: Redirects back after adding the video files.
+
+#### deleteVideo($id)
+
+- **Purpose**: Deletes a specific video file by its ID.
+- **Parameters**:
+  - `$id`: The ID of the video file to be deleted.
+- **Returns**: Redirects back after deleting the video file.
+
+#### addUsers(Request $request)
+
+- **Purpose**: Adds new users with associated profile pictures and sends a registration email.
+- **Parameters**:
+  - `$request`: The HTTP request containing user details.
+- **Files Uploaded**:
+  - `userPicture`: User profile picture.
+- **Returns**: Redirects back after adding the users.
+
+#### createAlbum(Request $request)
+
+- **Purpose**: Placeholder function for creating albums.
+- **Parameters**:
+  - `$request`: The HTTP request containing album details.
+- **Returns**: Displays the dumped request data.
+
+### Conclusion
+
+The `FunctionalController` provides essential functionality for adding, deleting, and managing artists, music files, video files, and users in the Sound Group Entertainment website. Additional functions can be added or modified based on project requirements.
+
+
   <p>Feel free to contribute to the project and make it even better!</p>
 
 </body>
