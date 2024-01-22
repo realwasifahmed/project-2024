@@ -282,6 +282,71 @@ The `FunctionalController` manages various functionalities related to adding and
 
 The `FunctionalController` provides essential functionality for adding, deleting, and managing artists, music files, video files, and users in the Sound Group Entertainment website. Additional functions can be added or modified based on project requirements.
 
+<h1>Instruction To Run The Project</h1>
+
+    <h2>Getting Started</h2>
+
+    <p>To set up and run the Sound Group Entertainment Website project, follow these steps:</p>
+
+    <h3>Prerequisites</h3>
+    <ul>
+        <li>Make sure you have <a href="https://getcomposer.org/">Composer</a> installed on your system.</li>
+    </ul>
+
+    <h3>Installation</h3>
+    <ol>
+        <li>Clone the repository to your local machine:</li>
+        <code>git clone &lt;repository-url&gt;</code>
+
+        <li>Navigate to the project directory:</li>
+        <code>cd sound-group-entertainment-website</code>
+
+        <li>Install the project dependencies using Composer:</li>
+        <code>composer install</code>
+    </ol>
+
+    <h3>Configuration</h3>
+    <ol>
+        <li>Generate a new application key:</li>
+        <code>php artisan key:generate</code>
+    </ol>
+
+    <h3>Database Setup</h3>
+    <ol>
+        <li>Run database migrations to create the required tables:</li>
+        <code>php artisan migrate</code>
+    </ol>
+
+    <h3>Optimization</h3>
+    <ol>
+        <li>Optimize the project for better performance:</li>
+        <code>php artisan optimize</code>
+    </ol>
+
+    <h3>Running the Development Server</h3>
+    <ol>
+        <li>Start the development server:</li>
+        <code>php artisan serve</code>
+    </ol>
+
+    <h3>Additional Notes</h3>
+    <ul>
+        <li>Ensure that your environment is configured correctly, including database settings and other Laravel
+            configurations.</li>
+        <li>Customize the project as needed based on your specific requirements.</li>
+        <li>For production deployments, consider additional steps like setting up a web server (e.g., Nginx, Apache),
+            securing your environment, and configuring necessary environment variables.</li>
+    </ul>
+
+    <h2>Run the Commands</h2>
+
+    <p>Manually run the following commands in your terminal:</p>
+    <code>composer install</code><br>
+    <code>php artisan key:generate</code><br>
+    <code>php artisan migrate</code><br>
+    <code>php artisan optimize</code><br>
+    <code>php artisan serve</code>
+
 
   <p>Feel free to contribute to the project and make it even better!</p>
 
