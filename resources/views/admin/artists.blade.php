@@ -8,10 +8,10 @@
                     <h3>Add Artist</h3>
                     <form action="{{ route('addArtist') }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <input type="file" id="ArtistProfilePicture" class="d-none" name="ArtistProfilePicture">
+                        <input type="file" id="artistPicture" class="d-none" name="artistPicture">
                         <input type="text" class="form-control mb-2" placeholder="Enter Full Name" name="Name">
                         <input type="Email" class="form-control mb-2" placeholder="Enter Email Address" name="Email">
-                        <label for="ArtistProfilePicture" class="form-control bg-secondary-subtle mb-2">Add Picture</label>
+                        <label for="artistPicture" class="form-control bg-secondary-subtle mb-2">Add Picture</label>
 
                         <button class="border-0 rounded-2 py-1 px-3 bg-red text-white">Add Artist</button>
                     </form>
@@ -37,35 +37,28 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
+                        <th scope="col">Image</th>
                         <th scope="col">Name</th>
-                        <th scope="col">Albums</th>
-                        <th scope="col">Release</th>
+                        <th scope="col">Email Address</th>
                         <th scope="col">View</th>
+                        <th scope="col">Edit</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td><a href="#" class="text-decoration-none text-black">View</a></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td><a href="#" class="text-decoration-none text-black">View</a></td>
 
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                        <td><a href="#" class="text-decoration-none text-black">View</a></td>
+                    @foreach ($data as $item)
+                        <tr>
+                            <th scope="row">{{ $loop->index + 1 }}</th>
+                            <td><img src="{{ asset('uploads/' . $item->picture) }}"
+                                    style="width: 40px; height: 40px; border-radius: 100%; objec-fit: cover;"
+                                    alt=""></td>
+                            <td>{{ $item->name }}</td>
+                            <td>{{ $item->email }}</td>
+                            <td><a href="/a/{{ '@' . $item->username}}" class="text-decoration-none text-black">View</a></td>
+                            <td><a href="#" class="text-decoration-none text-black">Edit</a></td>
+                        </tr>
+                    @endforeach
 
-                    </tr>
                 </tbody>
             </table>
         </div>

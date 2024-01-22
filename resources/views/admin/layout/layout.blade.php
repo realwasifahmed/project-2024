@@ -69,9 +69,6 @@
         new MultiSelectTag('video') // id
 
 
-
-
-
         document.querySelector('musics')
     </script>
 </body>

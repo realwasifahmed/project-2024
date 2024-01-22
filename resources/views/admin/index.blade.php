@@ -11,25 +11,25 @@
                     <div class="col-3 mb-4">
                         <div class="container py-2 bg-secondary-subtle rounded-2">
                             <h3 class="fs-4 ">Users</h3>
-                            <h1 class="text-red">0</h1>
+                            <h1 class="text-red">{{ $userCount ? $userCount : 'N/A' }}</h1>
                         </div>
                     </div>
                     <div class="col-3 mb-4">
                         <div class="container py-2 bg-secondary-subtle rounded-2">
                             <h3 class="fs-4 ">Artists</h3>
-                            <h1 class="text-red">0</h1>
+                            <h1 class="text-red">{{ $artistCount ? $artistCount : 'N/A' }}</h1>
                         </div>
                     </div>
                     <div class="col-3 mb-4">
                         <div class="container py-2 bg-secondary-subtle rounded-2">
                             <h3 class="fs-4 ">Audio Songs</h3>
-                            <h1 class="text-red">0</h1>
+                            <h1 class="text-red">{{ $musicsCount ? $musicsCount : 'N/A' }}</h1>
                         </div>
                     </div>
                     <div class="col-3 mb-4">
                         <div class="container py-2 bg-secondary-subtle rounded-2">
                             <h3 class="fs-4 ">Video Songs</h3>
-                            <h1 class="text-red">0</h1>
+                            <h1 class="text-red">{{ $videoCount ? $videoCount : 'N/A' }}</h1>
                         </div>
                     </div>
                 </div>
@@ -46,27 +46,18 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Name</th>
                                     <th scope="col">Artist</th>
-                                    <th scope="col">Duration</th>
+                                    <th scope="col">Year</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td colspan="2">Larry the Bird</td>
-                                    <td>@twitter</td>
-                                </tr>
+                                @foreach ($latestMusic as $item)
+                                    <tr>
+                                        <th scope="row">{{ $loop->index + 1 }}</th>
+                                        <td>{{ $item->name }}</td>
+                                        <td>{{ $item->artist->name }}</td>
+                                        <td>{{ $item->Year }}</td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -78,27 +69,18 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Name</th>
                                     <th scope="col">Artist</th>
-                                    <th scope="col">Duration</th>
+                                    <th scope="col">Year</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td colspan="2">Larry the Bird</td>
-                                    <td>@twitter</td>
-                                </tr>
+                                @foreach ($latstVideos as $item)
+                                    <tr>
+                                        <th scope="row">{{ $loop->index + 1 }}</th>
+                                        <td>{{ $item->name }}</td>
+                                        <td>{{ $item->artist->name }}</td>
+                                        <td>{{ $item->Year }}</td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

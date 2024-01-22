@@ -8,6 +8,7 @@
                     <form action="{{ route('addMusics') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <input type="file" id="AudioMusicPicture" class="d-none" name="AudioMusicIMage">
+                        <input type="file" id="AudioMusicFile" class="d-none" name="AudioMusicFile">
                         <input type="text" class="form-control mb-2" placeholder="Enter Full Name" name="Name">
                         <input type="text" class="form-control mb-2" placeholder="Year" name="Year">
                         <select name="Genre" class="form-control mb-2" id="artist">
@@ -18,13 +19,19 @@
                         </select>
                         <select name="artist" class="form-control mb-2" id="artist">
                             <option value="0">Artist</option>
-                            <option value="Talha Anjum">Talha Anjum</option>
-                            <option value="Talha Younus">Talha Younus</option>
-                            <option value="YounStunners">YounStunners</option>
+                            @foreach ($Artist as $item)
+                                <option value={{ $item->id }}>{{ $item->name }}</option>
+                            @endforeach
+
                         </select>
-                        <textarea name="description" id="description" min='300' placeholder="Enter Description About This Song" class="form-control mb-2"
-                            cols="30" rows="10"></textarea>
                         <label for="AudioMusicPicture" class="form-control bg-secondary-subtle mb-2">Add Picture</label>
+                        <label for="AudioMusicFile" class="form-control bg-secondary-subtle mb-2">Add Audio Music</label>
+                        <textarea name="description" id="description" min='300' placeholder="Enter Description About This Song"
+                            class="form-control mb-2" cols="30" rows="10"></textarea>
+
+
+
+
 
                         <button class="border-0 rounded-2 py-1 px-3 bg-red text-white">Add Audio Song</button>
                     </form>
@@ -51,37 +58,37 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Name</th>
+                        <th scope="col">Genre</th>
                         <th scope="col">Artist</th>
-                        <th scope="col">Album</th>
-                        <th scope="col">Duration</th>
+                        <th scope="col">Year</th>
                         <th scope="col">View</th>
+                        <th scope="col">Delete</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Shikayat</td>
-                        <td>Aur</td>
-                        <td>Uraan</td>
-                        <td>3.50 Mins</td>
-                        <td><a href="#" class="text-decoration-none text-black">View</a></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>Kuasdji</td>
-                        <td>0.2 Mins</td>
-                        <td><a href="#" class="text-decoration-none text-black">View</a></td>
 
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td colspan="3">Larry the Bird</td>
-                        <td>@twitter</td>
-                        <td><a href="#" class="text-decoration-none text-black">View</a></td>
 
-                    </tr>
+
+                    @foreach ($data as $item)
+                        <tr>
+                            <th scope="row">{{ $loop->index + 1 }}</th>
+                            <td>{{ $item->name }}</td>
+                            <td>{{ $item->Genre }}</td>
+                            <td>{{ optional($item->artist)->name ?: 'N/A' }}</td>
+                            <td>{{ $item->Year }}</td>
+                            <td><a href="/music/{{ $item->id }}/{{ Str::kebab($item->name) }}"
+                                    class="text-decoration-none text-black">View</a></td>
+                            <td>
+                                <form action="{{ route('deleteMusic', ['id' => $item->id]) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit"
+                                        class="text-decoration-none  p-0 m-0 border-0 bg-white text-black">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
+
                 </tbody>
             </table>
         </div>

@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\artist;
+use App\Models\musics;
+use App\Models\User;
+use App\Models\videos;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -39,35 +43,58 @@ class MainController extends Controller
 
 
     // Admin Dashboard
-    public function getAdminPage(){
-        return view('admin.index');
+    public function getAdminPage()
+    {
+        $artistCount = artist::count();
+        $userCount = User::count();
+        $videoCount = videos::count();
+        $musicsCount = musics::count();
+        $latestMusic = musics::latest()->take(10)->get();
+        $latstVideos = videos::latest()->take(10)->get();
+        return view('admin.index', compact('artistCount', 'userCount', 'videoCount', 'musicsCount', 'latestMusic', 'latstVideos'));
     }
 
-    public function getAllArists(){
-        return view('admin.artists');
+    public function getAllArists()
+    {
+        $data = artist::all();
+        return view('admin.artists', ['data' =>  $data]);
     }
 
-    public function getAllMusicFiles(){
-        return view('admin.musics');
+    public function getAllMusicFiles()
+    {
+        $data = musics::with('artist')->get();
+        $Artist = artist::all();
+        return view('admin.musics', ['data' => $data, 'Artist' => $Artist]);
     }
 
-    public function addMusicFiles(){
+    public function addMusicFiles()
+    {
         return view('admin.addMusic');
     }
 
-    public function getAllVideoFiles(){
-        return view('admin.videos');
+    public function getAllVideoFiles()
+    {
+        $data = videos::all();
+        $Artist = artist::all();
+        return view('admin.videos', [
+            'data' => $data,
+            'Artist' => $Artist,
+        ]);
     }
 
-    public function addVideoFiles(){
+    public function addVideoFiles()
+    {
         return view('admin.addVideos');
     }
 
-    public function getAllUsers(){
-        return view('admin.users');
+    public function getAllUsers()
+    {
+        $data = User::all();
+        return view('admin.users', ['data' => $data]);
     }
 
-    public function getAllAlbumns(){
+    public function getAllAlbumns()
+    {
         return view('admin.albumns');
     }
 }

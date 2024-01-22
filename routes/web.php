@@ -40,3 +40,7 @@ Route::post('/addMusics', [FunctionalController::class, 'addMusics'])->name('add
 Route::post('/addVideos', [FunctionalController::class, 'addVideos'])->name('addVideos');
 Route::post('/addUsers', [FunctionalController::class, 'addUsers'])->name('addUsers');
 Route::post('/createAlbum', [FunctionalController::class, 'createAlbum'])->name('createAlbum');
+
+// Delete Routes
+Route::delete('/deleteMusic/{id}', [FunctionalController::class,'deleteMusic'])->name('deleteMusic');
+Route::delete('/deleteVideo/{id}', [FunctionalController::class,'deleteVideo'])->name('deleteVideo');
