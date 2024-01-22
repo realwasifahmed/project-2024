@@ -1,66 +1,107 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<body>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+  <h1>Sound Group Entertainment Website</h1>
 
-## About Laravel
+  <h2>Project Overview</h2>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+  <p>The Sound Group Entertainment Website is a platform designed to host a vast collection of music and videos,
+    catering to both regional and English language preferences. The website aims to provide a seamless and
+    user-friendly experience for enthusiasts to explore, review, and rate various music and video content. The
+    project is built on the Laravel framework, ensuring a robust and scalable solution.</p>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+  <h2>Problem Statement</h2>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+  <p>In today's world, music and videos are integral sources of entertainment. Sound Group recognizes this and
+    endeavors to create a comprehensive website that organizes and showcases a diverse range of music and video
+    content. The primary goal is to develop a user-centric platform that allows users to easily navigate through
+    albums, artists, years, genres, and languages.</p>
 
-## Learning Laravel
+  <h2>Features</h2>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+  <ul>
+    <li>
+      <h3>User Roles:</h3>
+      <ul>
+        <li>Administrator: Responsible for managing content, categories, users, and overall website details.</li>
+        <li>User: Able to register, search for content, add/modify reviews, and provide ratings.</li>
+      </ul>
+    </li>
+    <li>
+      <h3>Content Organization:</h3>
+      <ul>
+        <li>Music and video files are categorized by album, artist, year, genre, and language.</li>
+        <li>Flashing "New" icon indicates the latest additions to the content library.</li>
+        <li>Detailed information, images, and descriptions accompany each music and video entry.</li>
+      </ul>
+    </li>
+    <li>
+      <h3>Administrator Functionality:</h3>
+      <ul>
+        <li>Add music files with relevant information.</li>
+        <li>Add video files with detailed information.</li>
+        <li>Create and manage categories such as year, artist, album, etc.</li>
+        <li>Delete music and video files.</li>
+        <li>Create and manage user logins.</li>
+        <li>Overall management of website details.</li>
+      </ul>
+    </li>
+    <li>
+      <h3>User Functionality:</h3>
+      <ul>
+        <li>Register and create a unique user ID.</li>
+        <li>Search for music and video content based on name, artist, year, album, etc.</li>
+        <li>Add or modify reviews for content.</li>
+        <li>Add or modify ratings for music and videos.</li>
+      </ul>
+    </li>
+    <li>
+      <h3>Home Page:</h3>
+      <ul>
+        <li>Displays information about the website.</li>
+        <li>Features a section for the latest music and videos, with 5 listings each.</li>
+      </ul>
+    </li>
+  </ul>
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+  <h2>Customer Specifications</h2>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+  <ul>
+    <li>Mandatory user information: Name, address, phone numbers, email IDs.</li>
+    <li>Proper validations for all data fields.</li>
+    <li>Submission of the project with documentation and database backup.</li>
+  </ul>
 
-## Laravel Sponsors
+  <h2>Technologies Used</h2>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+  <p>Laravel Framework</p>
 
-### Premium Partners
+  <h2>Getting Started</h2>
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+  <ol>
+    <li>Clone the repository.</li>
+    <li>Set up the Laravel environment.</li>
+    <li>Import the provided database backup.</li>
+    <li>Follow the documentation for detailed instructions on configuration and usage.</li>
+  </ol>
 
-## Contributing
+  <h2>Documentation</h2>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+  <p>Detailed documentation is available in the <code>/docs</code> directory. Please refer to it for information on
+    installation, configuration, and usage.</p>
 
-## Code of Conduct
+  <h2>Project Submission</h2>
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+  <p>Ensure that the project is submitted with proper documentation and a backup of the database.</p>
 
-## Security Vulnerabilities
+  <h2>Contributors</h2>
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+  <ul>
+    <li>Wasif Ahmed</li>
+    <li>Arshan Mustafa</li>
+    <li>Usman Sawati</li>
+    <li>Mohammad Idress</li>
+  </ul>
 
-## License
+  <p>Feel free to contribute to the project and make it even better!</p>
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+</body>
