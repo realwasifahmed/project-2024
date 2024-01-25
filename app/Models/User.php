@@ -43,4 +43,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function favorites()
+    {
+        return $this->belongsToMany(musics::class, 'favorites');
+    }
+
+    public function favoriteVideos()
+    {
+        return $this->belongsToMany(videos::class, 'favorite_videos');
+    }
 }

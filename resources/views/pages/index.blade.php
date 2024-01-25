@@ -15,7 +15,7 @@
                     Talha Anjum and Talhah Yunus rose to fame as rappers on YouTube
                     after releasing their first song "Burger-e-Karachi".
                 </p>
-                <button class="featured-button">View Albums</button>
+                {{-- <button class="featured-button">View Albums</button> --}}
             </div>
             <!-- Main Hero Section Ends -->
 
@@ -24,102 +24,23 @@
             <div class="movie-list-container margin-top-under-feature">
                 <h1 class="movie-list-title">Top Listeners</h1>
                 <div class="movie-list-wrapper" style="max-width: 100%; display: flex; gap: 15px; flex-wrap: wrap;">
-                    <div class="audio_container mt-2">
-                        <div class="audio__image">
-                            <img src="./img/8.jpg" alt="" />
+
+                    @foreach ($Musics as $music)
+                        <div class="audio_container mt-2">
+                            <div class="audio__image">
+                                <img src="{{ asset('uploads/' . $music->image) }}" alt="" />
+                            </div>
+                            <div class="audio_content">
+                                <h3><a href="/music/{{ $music->id }}">{{ $music->name }}</a></h3>
+                                <a href="/artist/{{ $music->artist->id }}">{{ $music->artist->name }}</a>
+                            </div>
+                            <div class="audio__player">
+                                <a href="/music/{{ $music->id }}"><i class="fa fa-play"></i></a>
+                            </div>
                         </div>
-                        <div class="audio_content">
-                            <h3><a href="#">Shikayat</a></h3>
-                            <a href="#">Aur</a>
-                        </div>
-                        <div class="audio__player">
-                            <a href="#"><i class="fa fa-play"></i></a>
-                        </div>
-                    </div>
-                    <div class="audio_container mt-2">
-                        <div class="audio__image">
-                            <img src="./img/8.jpg" alt="" />
-                        </div>
-                        <div class="audio_content">
-                            <h3><a href="#">Shikayat</a></h3>
-                            <a href="#">Aur</a>
-                        </div>
-                        <div class="audio__player">
-                            <a href="#"><i class="fa fa-play"></i></a>
-                        </div>
-                    </div>
-                    <div class="audio_container mt-2">
-                        <div class="audio__image">
-                            <img src="./img/8.jpg" alt="" />
-                        </div>
-                        <div class="audio_content">
-                            <h3><a href="#">Shikayat</a></h3>
-                            <a href="#">Aur</a>
-                        </div>
-                        <div class="audio__player">
-                            <a href="#"><i class="fa fa-play"></i></a>
-                        </div>
-                    </div>
-                    <div class="audio_container mt-2">
-                        <div class="audio__image">
-                            <img src="./img/8.jpg" alt="" />
-                        </div>
-                        <div class="audio_content">
-                            <h3><a href="#">Shikayat</a></h3>
-                            <a href="#">Aur</a>
-                        </div>
-                        <div class="audio__player">
-                            <a href="#"><i class="fa fa-play"></i></a>
-                        </div>
-                    </div>
-                    <div class="audio_container mt-2">
-                        <div class="audio__image">
-                            <img src="./img/8.jpg" alt="" />
-                        </div>
-                        <div class="audio_content">
-                            <h3><a href="#">Shikayat</a></h3>
-                            <a href="#">Aur</a>
-                        </div>
-                        <div class="audio__player">
-                            <a href="#"><i class="fa fa-play"></i></a>
-                        </div>
-                    </div>
-                    <div class="audio_container mt-2">
-                        <div class="audio__image">
-                            <img src="./img/8.jpg" alt="" />
-                        </div>
-                        <div class="audio_content">
-                            <h3><a href="#">Shikayat</a></h3>
-                            <a href="#">Aur</a>
-                        </div>
-                        <div class="audio__player">
-                            <a href="#"><i class="fa fa-play"></i></a>
-                        </div>
-                    </div>
-                    <div class="audio_container mt-2">
-                        <div class="audio__image">
-                            <img src="./img/8.jpg" alt="" />
-                        </div>
-                        <div class="audio_content">
-                            <h3><a href="#">Shikayat</a></h3>
-                            <a href="#">Aur</a>
-                        </div>
-                        <div class="audio__player">
-                            <a href="#"><i class="fa fa-play"></i></a>
-                        </div>
-                    </div>
-                    <div class="audio_container mt-2">
-                        <div class="audio__image">
-                            <img src="./img/8.jpg" alt="" />
-                        </div>
-                        <div class="audio_content">
-                            <h3><a href="#">Shikayat</a></h3>
-                            <a href="#">Aur</a>
-                        </div>
-                        <div class="audio__player">
-                            <a href="#"><i class="fa fa-play"></i></a>
-                        </div>
-                    </div>
+                    @endforeach
+
+
 
                 </div>
             </div>
@@ -131,69 +52,20 @@
                 <h1 class="movie-list-title">Lastest Streams</h1>
                 <div class="movie-list-wrapper">
                     <div class="movie-list">
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/1.jpeg" alt="" />
-                            <span class="movie-list-item-title">Her</span>
-                            <p class="movie-list-item-desc">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                                hic fugit similique accusantium.
-                            </p>
-                            <button class="movie-list-item-button">Watch</button>
-                        </div>
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/2.jpeg" alt="" />
-                            <span class="movie-list-item-title">Her</span>
-                            <p class="movie-list-item-desc">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                                hic fugit similique accusantium.
-                            </p>
-                            <button class="movie-list-item-button">Watch</button>
-                        </div>
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/15.jpg" alt="" />
-                            <span class="movie-list-item-title">Her</span>
-                            <p class="movie-list-item-desc">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                                hic fugit similique accusantium.
-                            </p>
-                            <button class="movie-list-item-button">Watch</button>
-                        </div>
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/3.jpg" alt="" />
-                            <span class="movie-list-item-title">Her</span>
-                            <p class="movie-list-item-desc">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                                hic fugit similique accusantium.
-                            </p>
-                            <button class="movie-list-item-button">Watch</button>
-                        </div>
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/4.jpg" alt="" />
-                            <span class="movie-list-item-title">Her</span>
-                            <p class="movie-list-item-desc">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                                hic fugit similique accusantium.
-                            </p>
-                            <button class="movie-list-item-button">Watch</button>
-                        </div>
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/5.jpg" alt="" />
-                            <span class="movie-list-item-title">Her</span>
-                            <p class="movie-list-item-desc">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                                hic fugit similique accusantium.
-                            </p>
-                            <button class="movie-list-item-button">Watch</button>
-                        </div>
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/1.jpeg" alt="" />
-                            <span class="movie-list-item-title">Her</span>
-                            <p class="movie-list-item-desc">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                                hic fugit similique accusantium.
-                            </p>
-                            <button class="movie-list-item-button">Watch</button>
-                        </div>
+                        @foreach ($Videos as $video)
+                            <div class="movie-list-item">
+                                <img class="movie-list-item-img" src="{{ asset('uploads/' . $video->image) }}"
+                                    alt="" />
+                                <span class="movie-list-item-title">{{ $video->name }}</span>
+                                <p class="movie-list-item-desc">
+                                    {{ $video->description }}
+                                </p>
+                                <a href="/video/{{ $video->id }}" class="movie-list-item-button"
+                                    style="text-decoration: none;">Watch</a>
+                            </div>
+                        @endforeach
+
+
                     </div>
                     <i class="fas fa-chevron-right arrow"></i>
                 </div>
@@ -215,7 +87,7 @@
                         producers of the viral fan-favorite song “Tu Hai Kahan”, the song
                         that has crossed 47 million views on youtube.
                     </p>
-                    <button class="featured-button">View Album</button>
+                    {{-- <button class="featured-button">View Album</button> --}}
                 </div>
             </div>
 
@@ -224,7 +96,7 @@
 
             <!-- Albumn Start -->
 
-            <div class="movie-list-container  margin-top-under-feature">
+            {{-- <div class="movie-list-container margin-top-under-feature" style="margin-top: 150px;">
                 <h1 class="movie-list-title">ALBUMS</h1>
                 <div class="movie-list-wrapper">
                     <div class="movie-list">
@@ -301,34 +173,45 @@
                     </div>
                     <i class="fas fa-chevron-right arrow"></i>
                 </div>
-            </div>
+            </div> --}}
 
             <!-- Albumn End -->
 
             <!-- Genre Section Start -->
-            <div class="movie-list-container">
+            <div class="movie-list-container" style="margin-top: 150px;">
                 <h1 class="movie-list-title">GENRE</h1>
                 <div class="movie-list-wrapper">
                     <div class="movie-list">
                         <div class="movie-list-item Genre-List">
-                            <img class="movie-list-item-img" src="img/8.jpg" alt="" />
-                            <a href="#" class="text-white"><span class="movie-list-item-title">Hip hop</span></a>
+                            <img class="movie-list-item-img" src="{{asset('img/stunners.jpg')}}" alt="" />
+                            <a href="/c/Hip Hop" class="text-white"><span class="movie-list-item-title">Hip
+                                    hop</span></a>
                         </div>
                         <div class="movie-list-item Genre-List">
                             <img class="movie-list-item-img" src="img/8.jpg" alt="" />
-                            <span class="movie-list-item-title">Classical</span>
+                            <a href="/c/Classical" class="text-white"><span
+                                    class="movie-list-item-title">Classical</span></a>
+
                         </div>
                         <div class="movie-list-item Genre-List">
-                            <img class="movie-list-item-img" src="img/8.jpg" alt="" />
+                            <img class="movie-list-item-img" src="{{asset('img/jazz Music.jpg')}}" alt="" />
                             <span class="movie-list-item-title">Jazz</span>
+                            <a href="/c/Jazz" class="text-white"><span class="movie-list-item-title">Jazz</span></a>
+
                         </div>
                         <div class="movie-list-item Genre-List">
-                            <img class="movie-list-item-img" src="img/8.jpg" alt="" />
+                            <img class="movie-list-item-img" src="{{asset('img/michealjackson.jpg')}}" alt="" />
                             <span class="movie-list-item-title">Pop music</span>
+                            <a href="/c/Pop music" class="text-white"><span class="movie-list-item-title">Pop
+                                    music</span></a>
+
                         </div>
                         <div class="movie-list-item Genre-List">
-                            <img class="movie-list-item-img" src="img/8.jpg" alt="" />
+                            <img class="movie-list-item-img" src="{{asset('img/Instrumental.jpg')}}" alt="" />
                             <span class="movie-list-item-title">Instrumental</span>
+                            <a href="/c/Instrumental" class="text-white"><span
+                                    class="movie-list-item-title">Instrumental</span></a>
+
                         </div>
                     </div>
                     <i class="fas fa-chevron-right arrow"></i>

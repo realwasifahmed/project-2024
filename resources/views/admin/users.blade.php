@@ -41,7 +41,7 @@
                         <th scope="col">Full Name</th>
                         <th scope="col">Email</th>
                         <th scope="col">View</th>
-                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -52,8 +52,16 @@
                                     style="width: 45px; height:50; border-radius: 50%;" alt=""></td>
                             <td>{{ $item->name }}</td>
                             <td>{{ $item->email }}</td>
-                            <td><a href="/u/{{ '@' . $item->username}}" class="text-decoration-none text-black">View</a></td>
-                            <td><a href="#" class="text-decoration-none text-black">Edit</a></td>
+                            <td><a href="/u/{{ '@' . $item->username }}" class="text-decoration-none text-black">View</a>
+                            </td>
+                            <td>
+                                <form action="{{ route('deleteUser', ['id' => $item->id]) }}" method="POST">
+                                    @csrf
+                                    @method('post')
+                                    <button  type="submit" {{ $item->id }}"
+                                        class="text-decoration-none border-0 bg-white text-black">Delete</button>
+                                </form>
+                            </td>
                         </tr>
                     @endforeach
 

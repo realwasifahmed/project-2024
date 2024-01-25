@@ -16,4 +16,8 @@ class musics extends Model
     {
         return $this->belongsTo(artist::class);
     }
+    public function favoritedBy()
+    {
+        return $this->belongsToMany(User::class, 'favorites');
+    }
 }

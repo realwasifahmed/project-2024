@@ -17,8 +17,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('Year');
             $table->string('Genre');
+            $table->string('album');
             $table->unsignedBigInteger('artist_id');
-            $table->foreign('artist_id')->references('id')->on('artists');
+            $table->foreign('artist_id')->references('id')->on('artists')->onDelete('cascade');
             $table->string('description', 900);
             $table->string('videoFile', 900);
             $table->timestamps();

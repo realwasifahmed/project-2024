@@ -15,4 +15,9 @@ class videos extends Model
     {
         return $this->belongsTo(artist::class);
     }
+
+    public function favoritedByWhom()
+    {
+        return $this->belongsToMany(User::class, 'favorite_videos');
+    }
 }

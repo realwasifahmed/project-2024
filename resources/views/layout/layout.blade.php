@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="{{ asset('style.css') }}" />
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap"
         rel="stylesheet" />
@@ -31,16 +31,21 @@
                 <ul class="menu-list">
                     <li class="menu-list-item active"><a href="{{ route('IndexPage') }}"
                             style="text-decoration: none; color: white;">Home</a></li>
-                    <li class="menu-list-item">Movies</li>
-                    <li class="menu-list-item">Series</li>
-                    <li class="menu-list-item">Popular</li>
-                    <li class="menu-list-item">Trends</li>
+                    <li class="menu-list-item"><a href="/audio" style="text-decoration: none; color: white;">Audio</a>
+                    </li>
+                    <li class="menu-list-item"><a href="/movies" style="text-decoration: none; color: white;">Video</a>
+                    </li>
+                    <li class="menu-list-item"><a href="/profile"
+                            style="text-decoration: none; color: white;">Favorites</a>
+                    </li>
                 </ul>
             </div>
             <div class="profile-container">
-                <img class="profile-picture" src="img/profile.jpg" alt="" />
+                <img class="profile-picture"
+                    src="{{ Auth::check() ? asset('uploads/userProfilePicture/' . Auth::user()->image) : 'img/profile.png' }}"
+                    alt="" />
                 <div class="profile-text-container">
-                    <span class="profile-text">Wasif Ahmed</span>
+                    <span class="profile-text">{{ Auth::check() ? Auth::user()->name : 'Guest User' }}</span>
                     <i class="fas cursor-pointer fa-caret-down" id="showPorfileMenu"></i>
                 </div>
                 {{-- <div class="toggle">
@@ -63,46 +68,58 @@
             <a href="#">Settings</a>
             <i class="fa fa-chevron-right"></i>
         </div>
-        <button>Logout</button>
+        <button><a href="{{ route('logout') }}" class="text-white" style="text-decoration: none">Logout</a></button>
     </div>
     <!-- Profile Menu -->
 
     <!-- Sidebar Starts -->
     <div class="sidebar">
-        <span class="cursor-pointer">
+        <span class="cursor-pointer" id="home">
             <i class="left-menu-icon fas fa-home"></i>
             <p>Home</p>
         </span>
-        <span class="cursor-pointer">
-            <i class="left-menu-icon fas fa-search"></i>
-            <p>Search</p>
+        <span class="cursor-pointer" id="Audio">
+            <i class="left-menu-icon fas fa-play"></i>
+            <p>Audio</p>
         </span>
-        <span class="cursor-pointer">
-            <i class="left-menu-icon fas fa-users"></i>
-            <p>Users</p>
+        <span class="cursor-pointer" id="Video">
+            <i class="left-menu-icon fas fa-camera"></i>
+            <p>Video</p>
         </span>
-        <span class="cursor-pointer">
+        <span class="cursor-pointer" id="Profile">
             <i class="left-menu-icon fas fa-heart"></i>
             <p>Favrt</p>
-        </span>
-        <span class="cursor-pointer">
-            <i class="left-menu-icon fas fa-tv"></i>
-            <p>Watch</p>
-        </span>
-        <span class="cursor-pointer">
-            <i class="left-menu-icon fas fa-hourglass-start"></i>
-            <p>Time</p>
-        </span>
-        <span class="cursor-pointer">
-            <i class="left-menu-icon fas fa-shopping-cart"></i>
-            <p>Shop</p>
         </span>
     </div>
     <!-- Sidebar Ends -->
 
     @yield('content')
 
+    <script>
+        var home = document.querySelector('#home');
+        var audio = document.querySelector('#Audio'); // Changed to lowercase 'audio'
+        var video = document.querySelector('#Video'); // Changed to lowercase 'video'
+        var profile = document.querySelector('#Profile'); // Changed to uppercase 'Profile'
+
+        home.addEventListener('click', () => {
+            window.location.href = '/';
+        });
+
+        audio.addEventListener('click', () => {
+            window.location.href = '/audio';
+        });
+
+        video.addEventListener('click', () => {
+            window.location.href = '/movies'; // Changed to '/movies'
+        });
+
+        profile.addEventListener('click', () => {
+            window.location.href = '/profile';
+        });
+    </script>
+
     <script src="{{ asset('app.js') }}"></script>
+
 </body>
 
 </html>

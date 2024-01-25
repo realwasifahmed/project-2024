@@ -27,7 +27,8 @@
                     </div>
                 </div>
                 <hr />
-                <form action="#" class="loginForm" method="POST">
+                <form action="{{ route('loginUser') }}" class="loginForm" method="POST">
+                    @csrf
                     <div class="form-group">
                         <label for="email">Email or Username</label>
                         <input type="text" id="email" name="email" placeholder="Email or Username" />
@@ -42,7 +43,7 @@
                     <a href="/forgot">Forgot Your Password?</a>
                 </form>
                 <hr />
-                <a href="{{route('RegisterPage')}}">Don't have an account? Sign up for Sound Group </a>
+                <a href="{{ route('RegisterPage') }}">Don't have an account? Sign up for Sound Group </a>
             </div>
         </div>
     </div>

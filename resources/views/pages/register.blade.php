@@ -6,7 +6,7 @@
     <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="{{ asset('style.css') }}" />
 
     <title>SignUp - Sound Group</title>
 </head>
@@ -17,10 +17,13 @@
             <div class="login__content__container">
                 <h3>Sign up to start listening</h3>
 
-                <form action="#" class="loginForm" method="POST">
+                <form action="{{ route('RegisterUser') }}" class="loginForm" method="POST"
+                    enctype="multipart/form-data">
+                    @csrf
+
                     <div class="form-group">
                         <label for="email">Name</label>
-                        <input type="text" id="email" name="email" placeholder="Name" />
+                        <input type="text" id="name" name="name" placeholder="Name" />
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
@@ -29,6 +32,10 @@
                     <div class="form-group">
                         <label for="password">Password</label>
                         <input type="text" id="password" name="password" placeholder="Password" />
+                    </div>
+                    <div class="form-group">
+                        <label for="UserImage">Add Image</label>
+                        <input type="file" id="UserImage" name="UserImage" />
                     </div>
                     <div class="form-group">
                         <button type="submit">Sign Up</button>
@@ -46,7 +53,7 @@
                     </div>
                 </div>
                 <hr />
-                <a href="{{route('LoginPage')}}">Already Have An Account? Login To Sound Group </a>
+                <a href="#">Already Have An Account? Login To Sound Group </a>
             </div>
         </div>
     </div>

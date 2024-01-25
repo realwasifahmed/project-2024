@@ -1,16 +1,21 @@
 @extends('layout.layout')
 @section('content')
 
+    <head>
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    </head>
     <div class="aritst__container">
         <div class="artist__cover">
             <div class="artist__detials">
-                <img src="./img/8.jpg" alt="" />
+                <img src="{{ asset('uploads/userProfilePicture/' . Auth::user()->image) }}" alt=""
+                    style="object-fit: cover" />
                 <div class="artist_meta">
                     <div class="verified_artist">
                         <!-- <i class="fa fa-check"></i> Verified Artist -->
                     </div>
                     <p>Profile</p>
-                    <h1>Wasif Ahmed</h1>
+                    <h1>{{ Auth::user()->name }}</h1>
                 </div>
             </div>
         </div>
@@ -23,51 +28,19 @@
                     <div class="customscroll">
                         <table>
                             <tbody>
-                                <tr style="margin-bottom: 30px">
-                                    <td><img src="./img/1.jpeg" alt="" /> Shikayat</td>
-                                    <td>129,123,3249</td>
-                                    <td>3.4 Mins</td>
-                                </tr>
-                                <tr style="margin-bottom: 30px">
-                                    <td><img src="./img/1.jpeg" alt="" /> Shikayat</td>
-                                    <td>129,123,3249</td>
-                                    <td>3.4 Mins</td>
-                                </tr>
-                                <tr style="margin-bottom: 30px">
-                                    <td><img src="./img/1.jpeg" alt="" /> Shikayat</td>
-                                    <td>129,123,3249</td>
-                                    <td>3.4 Mins</td>
-                                </tr>
-                                <tr style="margin-bottom: 30px">
-                                    <td><img src="./img/1.jpeg" alt="" /> Shikayat</td>
-                                    <td>129,123,3249</td>
-                                    <td>3.4 Mins</td>
-                                </tr>
-                                <tr style="margin-bottom: 30px">
-                                    <td><img src="./img/1.jpeg" alt="" /> Shikayat</td>
-                                    <td>129,123,3249</td>
-                                    <td>3.4 Mins</td>
-                                </tr>
-                                <tr style="margin-bottom: 30px">
-                                    <td><img src="./img/1.jpeg" alt="" /> Shikayat</td>
-                                    <td>129,123,3249</td>
-                                    <td>3.4 Mins</td>
-                                </tr>
-                                <tr style="margin-bottom: 30px">
-                                    <td><img src="./img/1.jpeg" alt="" /> Shikayat</td>
-                                    <td>129,123,3249</td>
-                                    <td>3.4 Mins</td>
-                                </tr>
-                                <tr style="margin-bottom: 30px">
-                                    <td><img src="./img/1.jpeg" alt="" /> Shikayat</td>
-                                    <td>129,123,3249</td>
-                                    <td>3.4 Mins</td>
-                                </tr>
-                                <tr style="margin-bottom: 30px">
-                                    <td><img src="./img/1.jpeg" alt="" /> Shikayat</td>
-                                    <td>129,123,3249</td>
-                                    <td>3.4 Mins</td>
-                                </tr>
+                                @foreach ($favs as $item)
+                                    <tr style="margin-bottom: 30px">
+                                        <td><img src="{{ asset('uploads/' . $item->musics->image) }}" alt="" /> <a
+                                                href="/music/{{ $item->musics->id }}"
+                                                style="text-decoration: none; color: white;">{{ $item->musics->name }}</a>
+                                        </td>
+                                        <td> {{ $item->musics->Genre }}</td>
+                                        <td> {{ $item->musics->Year }}</td>
+                                        <td><a href="/music/{{ $item->musics->id }}" style="color: white;"><i
+                                                    class="fa fa-play"></i></a></td>
+                                    </tr>
+                                @endforeach
+
                             </tbody>
                         </table>
                     </div>
@@ -76,20 +49,26 @@
                     <h3>Fav Watch</h3>
                     <hr />
 
+
                     <div class="artis__video__container">
-                        <div class="artist__video__box">
-                            <div class="slide__container">
-                                <div class="image-container">
-                                    <img src="./img/11.jpg" alt="" />
-                                    <i class="fa fa-play"></i>
-                                </div>
-                                <i class="fa fa-chevron-right"></i>
+                        <div class="artist__video__box swiper-container" style=" overflow: hidden;">
+                            <div class="slide__container swiper-wrapper">
+                                @foreach ($videoFavs as $video)
+                                    <div class="swiper-slide" >
+                                        <div class="image-container">
+                                            <img src="{{ asset('uploads/' . $video->video->image) }}" alt="" />
+                                            <a href="/video/{{ $video->id }}"><i class="fa fa-play"></i></a>
+                                        </div>
+                                    </div>
+                                @endforeach
                             </div>
+
+                            <i class="fa fa-chevron-right swiper-button-next"></i>
                         </div>
                     </div>
                 </div>
             </div>
-            <h4>Fav Libraries</h4>
+            {{-- <h4>Fav Libraries</h4>
             <!-- <hr class="divider"> -->
             <div class="my__library">
                 <div class="movie-list-container mt-2">
@@ -169,7 +148,20 @@
                         <i class="fas fa-chevron-right arrow"></i>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 @endsection
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var swiper = new Swiper('.artist__video__box', {
+            slidesPerView: 1,
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    });
+</script>

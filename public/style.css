@@ -10,7 +10,6 @@ body {
   --primary-color: red;
 }
 
-
 .cursor-pointer {
   cursor: pointer;
 }
@@ -497,6 +496,9 @@ body {
 }
 .audio_container .audio__image img {
   width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .audio_container .audio_content {
   width: 100%;
@@ -881,10 +883,15 @@ body {
   position: absolute;
   width: 430px;
   border-radius: 25px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .aritst__container .content_container .content__details .video__content__slider .artis__video__container .slide__container .image-container img {
   width: 100%;
   border-radius: 25px;
+  height: 280px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .aritst__container .content_container .content__details .video__content__slider .artis__video__container .slide__container .image-container .fa-play {
   color: white;

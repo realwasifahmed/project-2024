@@ -525,7 +525,7 @@ a {
 
 .movie-list-item-button {
     padding: 10px;
-    background-color: #e9de09;
+    background-color: red;
     color: black;
     border-radius: 10px;
     outline: none;

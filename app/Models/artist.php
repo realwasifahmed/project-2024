@@ -20,4 +20,6 @@ class artist extends Model
     {
         return $this->hasMany(videos::class);
     }
+
+
 }
