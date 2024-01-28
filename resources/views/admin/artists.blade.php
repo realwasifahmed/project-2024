@@ -10,8 +10,17 @@
                         @csrf
                         <input type="file" id="artistPicture" class="d-none" name="artistPicture">
                         <input type="text" class="form-control mb-2" placeholder="Enter Full Name" name="Name">
+                        @error('Name')
+                        <span style='color: red; text-align: left; display: block; margin-top: -10px; margin-bottom: 10px; font-size:13px;'> {{$message}}</span>
+                        @enderror
                         <input type="Email" class="form-control mb-2" placeholder="Enter Email Address" name="Email">
+                        @error('Email')
+                        <span style='color: red; text-align: left; display: block; margin-top: -10px; margin-bottom: 10px; font-size:13px;'> {{$message}}</span>
+                        @enderror
                         <label for="artistPicture" class="form-control bg-secondary-subtle mb-2">Add Picture</label>
+                        @error('artistPicture')
+                        <span style='color: red; text-align: left; display: block; margin-top: -10px; margin-bottom: 10px; font-size:13px;'> {{$message}}</span>
+                        @enderror
 
                         <button class="border-0 rounded-2 py-1 px-3 bg-red text-white">Add Artist</button>
                     </form>
@@ -71,3 +80,11 @@
         </div>
     </div>
 @endsection
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+@if($errors->any())
+    <script>
+        $(document).ready(function() {
+            $('#addArtists  ').modal('show');
+        });
+    </script>
+@endif

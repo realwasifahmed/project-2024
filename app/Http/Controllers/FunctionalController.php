@@ -20,7 +20,12 @@ class FunctionalController extends Controller
 {
     public function addArtist(Request $request)
     {
-        // dd($request->all());
+        $request->validate([
+            'Name' => 'required',
+            'Email' => 'required|email',
+            'artistPicture' => 'required'
+        ]);
+
         $file = $request->file('artistPicture');
         $fileName = time() . '.' . $file->getClientOriginalExtension();
         $file->move(public_path('uploads'), $fileName);
@@ -39,7 +44,18 @@ class FunctionalController extends Controller
 
     public function addMusics(Request $request)
     {
-        // dd($request->all());
+        
+        $request->validate([
+            'AudioMusicIMage' => 'required',
+            'AudioMusicFile' => 'required',
+            'Name' => 'required',
+            'Year' => 'required',
+            'Genre' => 'required',
+            'artist' => 'required',
+            'album' => 'required',
+            'description' => 'required'
+        ]);
+
         $Image = $request->file('AudioMusicIMage');
         $ImageName = time() . '.' . $Image->getClientOriginalExtension();
         $Image->move(public_path('uploads'), $ImageName);
@@ -81,7 +97,16 @@ class FunctionalController extends Controller
 
     public function addVideos(Request $request)
     {
-        // dd($request->all());
+        $request->validate([
+            'VideoImageFile' => 'required',
+            'VideoFile' => 'required',
+            'Name' => 'required',
+            'Year' => 'required',
+            'Genre' => 'required',
+            'artist' => 'required',
+            'album' => 'required',
+            'description' => 'required',
+        ]);
 
         $Image = $request->file('VideoImageFile');
         $ImageName = time() . '.' . $Image->getClientOriginalExtension();
@@ -129,7 +154,11 @@ class FunctionalController extends Controller
     public function addUsers(Request $request)
     {
 
-        // dd($request->all());
+        $request->validate([
+            'Name' => 'required',
+            'Email' => 'required|email',
+            'userPicture' => 'required'
+        ]);
 
         $file = $request->file('userPicture');
         $fileName = time() . '.' . $file->getClientOriginalExtension();
@@ -281,6 +310,15 @@ class FunctionalController extends Controller
 
     public function RegisterUser(Request $request)
     {
+
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required',
+            'UserImage' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+
         $image = $request->file('UserImage');
         $imageName = time() . '.' . $image->getClientOriginalExtension();
         $image->move(public_path('uploads/userProfilePicture'), $imageName);
@@ -335,6 +373,11 @@ class FunctionalController extends Controller
 
     public function loginUser(Request $request)
     {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
+
         $credentials = $request->only('email', 'password');
         // dd($credentials);
         if (Auth::attempt($credentials)) {

@@ -32,7 +32,7 @@
                 <h3><a href="/c/{{$Video->Genre}}" style="text-decoration: none; color: white;">{{ $Video->Genre }}</a></h3>
                 <h2><a href="/artist/{{ $Video->artist->id }}" style="color: red; text-decoration: none;"> <span
                             style="font-size: 40px;">
-                            {{ ucfirst($Video->name) }}</span></a></h2>
+                            {{ ucfirst($Video->artist->name) }}</span></a></h2>
                 <p>"{{ $Video->name }}" by {{ $Video->artist->name }}, released in {{ $Video->Year }}, is a captivating
                     musical journey encapsulated in the album "{{ $Video->album }}" Their {{ $Video->Genre }} of genres,
                     from the enchanting title track to the rhythmic intricacies of "Journey Through Time," serves as a

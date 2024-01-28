@@ -9,35 +9,59 @@
                         @csrf
                         <input type="file" id="AudioMusicPicture" class="d-none" name="AudioMusicIMage">
                         <input type="file" id="AudioMusicFile" class="d-none" name="AudioMusicFile">
-                        <input type="text" class="form-control mb-2" placeholder="Enter Full Name" name="Name">
-                        <input type="text" class="form-control mb-2" placeholder="Year" name="Year">
+                        <input type="text" class="form-control mb-2" value="{{old('Name')}}" placeholder="Enter Full Name" name="Name">
+                        @error('Name')
+                        <span style='color: red; text-align: left; display: block; margin-top: -10px; margin-bottom: 10px; font-size:13px;'> {{$message}}</span>
+                        @enderror
+                        <input type="text" class="form-control mb-2"  value="{{old('Year')}}" placeholder="Year" name="Year">
+                        @error('Year')
+                        <span style='color: red; text-align: left; display: block; margin-top: -10px; margin-bottom: 10px; font-size:13px;'> {{$message}}</span>
+                        @enderror
                         <select name="Genre" class="form-control mb-2" id="genre">
-                            <option value="0">Genre</option>
+                            <option value="{{old('Genre') ? old('Genre') : ''}}"> {{old('Genre') ? old('Genre') : 'Select Genre'}}</option>
                             <option value="Hip Hop">Hip Hop</option>
                             <option value="Jazz">Jazz</option>
                             <option value="Classical">Classical</option>
                             <option value="Pop music">Pop music</option>
                             <option value="Instrumental">Instrumental</option>
                         </select>
+                        @error('Genre')
+                        <span style='color: red; text-align: left; display: block; margin-top: -10px; margin-bottom: 10px; font-size:13px;'> {{$message}}</span>
+                        @enderror
                         <select name="artist" class="form-control mb-2" id="artist">
-                            <option value="0">Artist</option>
+                            <option value="{{old('artist') ? old('artist') : ''}}"> {{old('artist') ? old('artist') : 'Select Artist'}}</option>
                             @foreach ($Artist as $item)
                                 <option value={{ $item->id }}>{{ $item->name }}</option>
                             @endforeach
-
                         </select>
+                        @error('artist')
+                        <span style='color: red; text-align: left; display: block; margin-top: -10px; margin-bottom: 10px; font-size:13px;'> {{$message}}</span>
+                        @enderror
 
                         <select name="album" id="album" onchange="selectAlbum()" class="form-control mb-2">
-                            <option value="0">Select Album</option>
+                            <option value="{{old('album') ? old('album') : ''}}"> {{old('album') ? old('album') : 'Select Album'}} </option>
                             <option value="createAlbum">Add New Album</option>
                         </select>
+                        @error('album')
+                        <span style='color: red; text-align: left; display: block; margin-top: -10px; margin-bottom: 10px; font-size:13px;'> {{$message}}</span>
+                        @enderror
 
                         <input type="text" name="newAlbum" style="display: none;" placeholder="Add New Album"
                             id="newAlbumInput" class="form-control mb-2">
+                            
                         <label for="AudioMusicPicture" class="form-control bg-secondary-subtle mb-2">Add Picture</label>
+                        @error('AudioMusicIMage')
+                        <span style='color: red; text-align: left; display: block; margin-top: -10px; margin-bottom: 10px; font-size:13px;'> {{$message}}</span>
+                        @enderror
                         <label for="AudioMusicFile" class="form-control bg-secondary-subtle mb-2">Add Audio Music</label>
-                        <textarea name="description" id="description" min='300' placeholder="Enter Description About This Song"
+                        @error('AudioMusicFile')
+                        <span style='color: red; text-align: left; display: block; margin-top: -10px; margin-bottom: 10px; font-size:13px;'> {{$message}}</span>
+                        @enderror
+                        <textarea name="description" value="{{old('description')}}" id="description" min='300' placeholder="Enter Description About This Song"
                             class="form-control mb-2" cols="30" rows="10"></textarea>
+                            @error('description')
+                            <span style='color: red; text-align: left; display: block; margin-top: -10px; margin-bottom: 10px; font-size:13px;'> {{$message}}</span>
+                            @enderror
 
 
 
@@ -155,4 +179,15 @@
             });
         });
     });
+
+    
 </script>
+
+@if($errors->any())
+    <script>
+        $(document).ready(function() {
+            $('#addAudioSongs').modal('show');
+        });
+    </script>
+@endif
+
