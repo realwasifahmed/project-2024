@@ -1,306 +1,120 @@
-<body>
-
-  <h1>Sound Group Entertainment Website</h1>
-
-  <h2>Project Overview</h2>
-
-  <p>The Sound Group Entertainment Website is a platform designed to host a vast collection of music and videos,
-    catering to both regional and English language preferences. The website aims to provide a seamless and
-    user-friendly experience for enthusiasts to explore, review, and rate various music and video content. The
-    project is built on the Laravel framework, ensuring a robust and scalable solution.</p>
-
-  <h2>Problem Statement</h2>
-
-  <p>In today's world, music and videos are integral sources of entertainment. Sound Group recognizes this and
-    endeavors to create a comprehensive website that organizes and showcases a diverse range of music and video
-    content. The primary goal is to develop a user-centric platform that allows users to easily navigate through
-    albums, artists, years, genres, and languages.</p>
-
-  <h2>Features</h2>
-
-  <ul>
-    <li>
-      <h3>User Roles:</h3>
-      <ul>
-        <li>Administrator: Responsible for managing content, categories, users, and overall website details.</li>
-        <li>User: Able to register, search for content, add/modify reviews, and provide ratings.</li>
-      </ul>
-    </li>
-    <li>
-      <h3>Content Organization:</h3>
-      <ul>
-        <li>Music and video files are categorized by album, artist, year, genre, and language.</li>
-        <li>Flashing "New" icon indicates the latest additions to the content library.</li>
-        <li>Detailed information, images, and descriptions accompany each music and video entry.</li>
-      </ul>
-    </li>
-    <li>
-      <h3>Administrator Functionality:</h3>
-      <ul>
-        <li>Add music files with relevant information.</li>
-        <li>Add video files with detailed information.</li>
-        <li>Create and manage categories such as year, artist, album, etc.</li>
-        <li>Delete music and video files.</li>
-        <li>Create and manage user logins.</li>
-        <li>Overall management of website details.</li>
-      </ul>
-    </li>
-    <li>
-      <h3>User Functionality:</h3>
-      <ul>
-        <li>Register and create a unique user ID.</li>
-        <li>Search for music and video content based on name, artist, year, album, etc.</li>
-        <li>Add or modify reviews for content.</li>
-        <li>Add or modify ratings for music and videos.</li>
-      </ul>
-    </li>
-    <li>
-      <h3>Home Page:</h3>
-      <ul>
-        <li>Displays information about the website.</li>
-        <li>Features a section for the latest music and videos, with 5 listings each.</li>
-      </ul>
-    </li>
-  </ul>
+Certainly! Below is a comprehensive developer guide for your Laravel application. This guide covers the provided controller, middleware, and model data. It includes explanations, best practices, and additional considerations.
 
-  <h2>Customer Specifications</h2>
+## Developer Guide for Your Laravel Application
 
-  <ul>
-    <li>Mandatory user information: Name, address, phone numbers, email IDs.</li>
-    <li>Proper validations for all data fields.</li>
-    <li>Submission of the project with documentation and database backup.</li>
-  </ul>
+### 1. Introduction
+Welcome to the developer guide for your Laravel application! This guide provides an in-depth understanding of the application's structure, functionalities, and best practices for development. The application enables users to manage artists, music, videos, and user accounts, offering features such as content addition, deletion, and updates, user reviews, and favorites management.
 
-  <h2>Technologies Used</h2>
+### 2. Getting Started
+#### Installation
+1. **Clone the Repository:**
+   ```bash
+   git clone [ttps://github.com/realwasifahmed/project-2024/](https://github.com/realwasifahmed/project-2024/)
+   ```
 
-  <p>Laravel Framework</p>
+2. **Install Dependencies:**
+   ```bash
+   composer install
+   ```
 
-  <h2>Getting Started</h2>
+3. **Configure Environment:**
+   - Copy `.env.example` to `.env` and set database details.
 
-  <ol>
-    <li>Clone the repository.</li>
-    <li>Set up the Laravel environment.</li>
-    <li>Import the provided database backup.</li>
-    <li>Follow the documentation for detailed instructions on configuration and usage.</li>
-  </ol>
+4. **Run Migrations:**
+   ```bash
+   php artisan migrate
+   ```
 
-  <h2>Documentation</h2>
+#### Configuration
+- Set database connection details and other environment-specific settings in the `.env` file.
 
-  <p>Detailed documentation is available in the <code>/docs</code> directory. Please refer to it for information on
-    installation, configuration, and usage.</p>
+### 3. Project Structure
+Your Laravel application follows the standard Laravel project structure. Notable directories include:
+- `app`: Contains controllers, models, and middleware.
+- `routes`: Contains route definitions.
+- `resources`: Holds views and assets.
+- `public`: Serves as the public document root.
 
-  <h2>Project Submission</h2>
+### 4. Dependencies
+The application relies on Laravel as the primary framework. No additional external packages are currently integrated.
 
-  <p>Ensure that the project is submitted with proper documentation and a backup of the database.</p>
+### 5. Environment Configuration
+Configure environment-specific settings such as database connections in the `.env` file.
 
-  <h2>Contributors</h2>
+### 6. Database
+The application uses Eloquent ORM for database interactions. Notable models include `artist`, `musics`, `videos`, and `User`. Relationships between models are defined to ensure data integrity.
 
-  <ul>
-    <li>Wasif Ahmed</li>
-    <li>Arshan Mustafa</li>
-    <li>Usman Sawati</li>
-    <li>Mohammad Idress</li>
-  </ul>
+### 7. Authentication and Authorization
+Authentication is implemented using Laravel's built-in system. Middleware ensures that users are authenticated where necessary. Additionally, the custom middleware `CheckAdmin` restricts certain routes to users with admin privileges.
 
+### 8. Routing
+Routing is defined in the `web.php` file. Routes direct HTTP requests to the appropriate controllers.
 
+### 9. Controllers
+#### FunctionalController
+1. **`addArtist`**: Validates and adds an artist with a unique username and image.
+2. **`addMusics`**: Manages the addition of music, creating a new album if needed.
+3. **`deleteMusic`**: Deletes a music record.
+4. **`addVideos`**: Manages the addition of videos, creating a new album if required.
+5. **`deleteVideo`**: Deletes a video record.
+6. **`addUsers`**: Adds a user with a unique username, image, and sends a registration email.
+7. **`getAlbum`**, **`getArtistVideos`**: Retrieve unique albums of an artist.
+8. **`addReview`**, **`updateReview`**: Adds and updates audio reviews.
+9. **`addVideoReview`**, **`updateVideoReview`**: Adds and updates video reviews.
+10. **`search`**, **`searchVideo`**: Searches for music and videos based on various criteria.
+11. **`toggleFavorite`**, **`addFavVideo`**: Manages user favorites.
 
-  # Sound Group Entertainment Website Controllers Documentation
+#### MainController
+Handles various pages for users, artists, videos, music, registration, login, etc. Implements an admin dashboard with statistics and data management pages. Utilizes middleware for checking admin privileges.
 
-## Main Controller
+### 10. Models
+#### `artist`
+Represents an artist with relationships to `musics` and `videos`.
 
-### Introduction
+#### `AudioReview`
+Represents audio reviews, belongs to users and musics.
 
-The `MainController` is responsible for handling various user and admin-related functionalities in the Sound Group Entertainment website. It manages the user pages and admin dashboard, serving as a bridge between the frontend views and the backend models.
+#### `favorites`, `favoriteVideos`
+Pivot tables for user-favorited musics and videos.
 
-### User Pages
+#### `musics`
+Represents music with a relationship to `artists` and `users`.
 
-#### getIndexPage()
+#### `ReviewVideo`
+Represents video reviews, belongs to users and videos.
 
-- **Purpose**: Renders the index page for general users.
-- **View**: `pages.index`
+#### `User`
+Represents user accounts with relationships to favorited musics and videos.
 
-#### getArtistPage()
+#### `videos`
+Represents videos with a relationship to `artists` and `users`.
 
-- **Purpose**: Renders the artist profile page.
-- **View**: `pages.artistProfile`
+### 11. Middleware
+#### `CheckAdmin` Middleware
+Ensures that only authenticated users with admin privileges can access certain routes.
 
-#### getProfilePage()
+### 12. Testing
+Write PHPUnit tests for each controller method to ensure functionality and prevent regressions.
 
-- **Purpose**: Renders the user profile page.
-- **View**: `pages.profile`
+### 13. Error Handling and Logging
+Leverage Laravel's default error handling. Logs can be found in the `storage/logs` directory.
 
-#### getVideoPage()
+### 14. Security Best Practices
+1. Implement CSRF protection.
+2. Securely hash passwords using Laravel's built-in features.
 
-- **Purpose**: Renders the video page for users.
-- **View**: `pages.video`
+### 15. Deployment
+Deploy the application following Laravel deployment best practices. Configure the production environment for optimal performance.
 
-#### getRegisterPage()
+### 16. Troubleshooting
+1. Check logs in the `storage/logs` directory for error details.
+2. Ensure proper configuration in the `.env` file.
 
-- **Purpose**: Renders the user registration page.
-- **View**: `pages.register`
+### 17. Contributing
+Follow the provided guidelines for contributing to the project. Adhere to the specified code of conduct.
 
-#### getLoginPage()
+### 18. Additional Resources
+- Links to Laravel documentation: [Laravel Documentation](https://laravel.com/docs).
+- External tutorials and resources can be added to aid developers.
 
-- **Purpose**: Renders the user login page.
-- **View**: `pages.login`
-
-### Admin Dashboard
-
-#### getAdminPage()
-
-- **Purpose**: Renders the admin dashboard with statistics and latest content.
-- **View**: `admin.index`
-- **Data Passed to View**:
-  - `artistCount`: Count of artists.
-  - `userCount`: Count of registered users.
-  - `videoCount`: Count of video files.
-  - `musicsCount`: Count of music files.
-  - `latestMusic`: Latest 10 music files.
-  - `latstVideos`: Latest 10 video files.
-
-#### getAllArists()
-
-- **Purpose**: Retrieves and renders a list of all artists in the admin panel.
-- **View**: `admin.artists`
-- **Data Passed to View**:
-  - `data`: All artist records.
-
-#### getAllMusicFiles()
-
-- **Purpose**: Retrieves and renders a list of all music files in the admin panel.
-- **View**: `admin.musics`
-- **Data Passed to View**:
-  - `data`: All music file records.
-  - `Artist`: All artist records for dropdown selection.
-
-#### addMusicFiles()
-
-- **Purpose**: Renders the form to add new music files.
-- **View**: `admin.addMusic`
-
-#### getAllVideoFiles()
-
-- **Purpose**: Retrieves and renders a list of all video files in the admin panel.
-- **View**: `admin.videos`
-- **Data Passed to View**:
-  - `data`: All video file records.
-  - `Artist`: All artist records for dropdown selection.
-
-#### addVideoFiles()
-
-- **Purpose**: Renders the form to add new video files.
-- **View**: `admin.addVideos`
-
-#### getAllUsers()
-
-- **Purpose**: Retrieves and renders a list of all registered users in the admin panel.
-- **View**: `admin.users`
-- **Data Passed to View**:
-  - `data`: All user records.
-
-#### getAllAlbumns()
-
-- **Purpose**: Renders the admin page for managing albums.
-- **View**: `admin.albumns`
-
-#### Contributors
-
-- Wasif Ahmed
-
-Feel free to contribute to the project and make it even better!
-
----
-
-## Functional Controller
-
-### Introduction
-
-The `FunctionalController` manages various functionalities related to adding and deleting artists, music files, video files, and users. It also includes a function for creating albums. This controller acts as a bridge between the user interface and the backend models.
-
-### Methods
-
-#### addArtist(Request $request)
-
-- **Purpose**: Adds a new artist with an associated profile picture.
-- **Parameters**:
-  - `$request`: The HTTP request containing artist details.
-- **Files Uploaded**:
-  - `artistPicture`: Artist profile picture.
-- **Returns**: Redirects back after adding the artist.
-
-#### addMusics(Request $request)
-
-- **Purpose**: Adds new music files with associated images.
-- **Parameters**:
-  - `$request`: The HTTP request containing music details.
-- **Files Uploaded**:
-  - `AudioMusicIMage`: Music image.
-  - `AudioMusicFile`: Music audio file.
-- **Returns**: Redirects back after adding the music files.
-
-#### deleteMusic($id)
-
-- **Purpose**: Deletes a specific music file by its ID.
-- **Parameters**:
-  - `$id`: The ID of the music file to be deleted.
-- **Returns**: Redirects back after deleting the music file.
-
-#### addVideos(Request $request)
-
-- **Purpose**: Adds new video files with associated images.
-- **Parameters**:
-  - `$request`: The HTTP request containing video details.
-- **Files Uploaded**:
-  - `VideoImageFile`: Video image.
-  - `VideoFile`: Video file.
-- **Returns**: Redirects back after adding the video files.
-
-#### deleteVideo($id)
-
-- **Purpose**: Deletes a specific video file by its ID.
-- **Parameters**:
-  - `$id`: The ID of the video file to be deleted.
-- **Returns**: Redirects back after deleting the video file.
-
-#### addUsers(Request $request)
-
-- **Purpose**: Adds new users with associated profile pictures and sends a registration email.
-- **Parameters**:
-  - `$request`: The HTTP request containing user details.
-- **Files Uploaded**:
-  - `userPicture`: User profile picture.
-- **Returns**: Redirects back after adding the users.
-
-#### createAlbum(Request $request)
-
-- **Purpose**: Placeholder function for creating albums.
-- **Parameters**:
-  - `$request`: The HTTP request containing album details.
-- **Returns**: Displays the dumped request data.
-
-### Conclusion
-
-The `FunctionalController` provides essential functionality for adding, deleting, and managing artists, music files, video files, and users in the Sound Group Entertainment website. Additional functions can be added or modified based on project requirements.
-
-
-# Instruction to install project
-
-### First Copy Project
-$ git clone https://github.com/realwasifahmed/project-2024.git
-
-### Go In to Folder
-$ cd project-2024
-
-### Run Composer Command (Make [Componer]('[https://composer](https://getcomposer.org/download/)https://getcomposer.org/download/') is downloaded)
-$ composer install
-
-#### Make a copy of .env.example and add your database
-
-### Run These Commands One By One
-$ php artisan generate:key 
-$ php artisan migrate
-$ php artisan optimize
-$ php artisan serve
-
-
-</body>
+This comprehensive guide provides developers with the necessary information to understand and contribute to your Laravel application effectively. Developers can refer to this guide for insights into the application's structure, functionalities, and best practices for development and deployment. Customize this guide based on any additional details or features specific to your application.
