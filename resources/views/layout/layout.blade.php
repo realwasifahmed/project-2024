@@ -68,7 +68,13 @@
             <a href="#">Settings</a>
             <i class="fa fa-chevron-right"></i>
         </div>
-        <button><a href="{{ route('logout') }}" class="text-white" style="text-decoration: none">Logout</a></button>
+        <button>
+            @if (Auth::check())
+                <a href="{{ route('logout') }}" class="text-white" style="text-decoration: none">Logout</a>
+            @else
+                <a href="{{ route('login') }}" class="text-white" style="text-decoration: none">Login/SignUp</a>
+            @endif
+        </button>
     </div>
     <!-- Profile Menu -->
 

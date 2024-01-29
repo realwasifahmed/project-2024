@@ -8,7 +8,7 @@
     <div class="aritst__container">
         <div class="artist__cover">
             <div class="artist__detials">
-                <img src="{{ asset('uploads/' . $Artist->picture) }}" alt="" />
+                <img src="{{ asset('uploads/' . $Artist->picture) }}" alt="" style="object-fit: cover" />
                 <div class="artist_meta">
                     <div class="verified_artist">
                         <i class="fa fa-check"></i> Verified Artist
@@ -157,6 +157,7 @@
     document.addEventListener('DOMContentLoaded', function() {
         var swiper = new Swiper('.artist__video__box', {
             slidesPerView: 1,
+            slidesPerGroup: 1,
             loop: true,
             navigation: {
                 nextEl: '.swiper-button-next',

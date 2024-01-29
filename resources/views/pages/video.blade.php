@@ -234,7 +234,7 @@
             </div>
             <div class="related-movies">
                 @foreach ($latest as $latest)
-                    <a href="/music/{{ $latest->id }}" class="movie">
+                    <a href="/video/{{ $latest->id }}" class="movie">
                         <img src="{{ asset('uploads/' . $latest->image) }}" style="height: 270px; object-fit: cover;"
                             alt="">
                     </a>

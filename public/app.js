@@ -36,26 +36,26 @@ arrows.forEach((arrow, i) => {
 
 
 // Preloader Animation
-const LoaderContainer = document.querySelector('.preloader');
-const UpperLoader = document.querySelector('.preloader .upper__Preloader');
-const LowerLoader = document.querySelector('.preloader .lower__preloader');
-const LogoLoader = document.querySelector('.preloader .logo');
+// const LoaderContainer = document.querySelector('.preloader');
+// const UpperLoader = document.querySelector('.preloader .upper__Preloader');
+// const LowerLoader = document.querySelector('.preloader .lower__preloader');
+// const LogoLoader = document.querySelector('.preloader .logo');
 
-// Upper And Lower Loader
-setTimeout(() => {
-    UpperLoader.style.transform = "translateY(-100%)";
-    LowerLoader.style.transform = "translateY(100%)";
-}, 2500);
+// // Upper And Lower Loader
+// setTimeout(() => {
+//     UpperLoader.style.transform = "translateY(-100%)";
+//     LowerLoader.style.transform = "translateY(100%)";
+// }, 2500);
 
-// Logo Loader Opacity
-setTimeout(() => {
-    LogoLoader.style.opacity = '0';
-}, 1500)
+// // Logo Loader Opacity
+// setTimeout(() => {
+//     LogoLoader.style.opacity = '0';
+// }, 1500)
 
-// Loader Container Display None
-setTimeout(() => {
-    LoaderContainer.style.display = 'none'
-}, 3000)
+// // Loader Container Display None
+// setTimeout(() => {
+//     LoaderContainer.style.display = 'none'
+// }, 3000)
 
 // Profile Drop Down Container Setting
 const ProfileMenu = document.querySelector('.profile_menu');
@@ -272,3 +272,11 @@ for (let i of document.querySelectorAll(".aWrap")) {
 }
 
 
+
+const descriptionElements = document.querySelectorAll('.movie-list-item-desc');
+
+descriptionElements.forEach((element) => {
+    const originalText = element.textContent;
+    const trimmedText = originalText.slice(0, 120);
+    element.innerHTML = trimmedText + '...';
+});

@@ -75,7 +75,7 @@
 </script> --}}
 
 
-{{-- 
+{{--
 <script>
     // Function to perform form validation
     function validateForm() {
@@ -139,7 +139,7 @@
 
 
 
-                  // Assume a function checkCredentials(email, password) that checks credentials on the server.
+            // Assume a function checkCredentials(email, password) that checks credentials on the server.
             // Replace this with actual server-side validation.
             if (!checkCredentials(email, password)) {
                 alert('Incorrect email or password. Please try again.');
@@ -148,17 +148,15 @@
 
             return true;
 
-                // Dummy function, replace this with actual server-side validation logic.
-        function checkCredentials(email, password) {
-            // Replace this with actual server-side validation logic.
-            // For demonstration purposes, always return true.
-            return true;
-        
-        }
+            // Dummy function, replace this with actual server-side validation logic.
+            function checkCredentials(email, password) {
+                // Replace this with actual server-side validation logic.
+                // For demonstration purposes, always return true.
+                return true;
+
+            }
 
         }
-
-    
     </script>
 </head>
 
@@ -179,22 +177,30 @@
                 </div>
                 <hr />
                 <!-- Add onsubmit attribute to trigger validation -->
-                <form action="{{ route('loginUser') }}" class="loginForm" method="POST" onsubmit="return validateForm()">
+                <form action="{{ route('loginUser') }}" class="loginForm" method="POST"
+                    onsubmit="return validateForm()">
                     @csrf
+                    @if (session('error'))
+                        <span style="color: red;">{{ session('error') }}</span>
+                    @endif
                     <div class="form-group">
                         <label for="email">Email or Username</label>
                         <input type="email" id="email" name="email" placeholder="Email or Username" />
                         @error('email')
-                       <span style='color: red; text-align: left; display: block; margin-top: -10px; margin-bottom: 10px; font-size:13px;'> {{$message}}</span>
-                    @enderror
+                            <span
+                                style='color: red; text-align: left; display: block; margin-top: -10px; margin-bottom: 10px; font-size:13px;'>
+                                {{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
                         <!-- Corrected input type to "password" -->
                         <input type="password" id="password" name="password" placeholder="Password" />
                         @error('password')
-                        <span style='color: red; text-align: left; display: block; margin-top: -10px; margin-bottom: 10px; font-size:13px;'> {{$message}}</span>
-                     @enderror
+                            <span
+                                style='color: red; text-align: left; display: block; margin-top: -10px; margin-bottom: 10px; font-size:13px;'>
+                                {{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <button type="submit">Log In</button>

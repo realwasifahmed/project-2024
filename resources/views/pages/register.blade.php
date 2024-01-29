@@ -127,17 +127,23 @@
 
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" id="name" name="name" value="{{old('name')}}" placeholder="Name" />
+                        <input type="text" id="name" name="name" value="{{ old('name') }}"
+                            placeholder="Name" />
                     </div>
                     @error('name')
-                    <span style='color: red; text-align: left; display: block; margin-top: -10px; margin-bottom: 10px; font-size:13px;'> {{$message}}</span>
+                        <span
+                            style='color: red; text-align: left; display: block; margin-top: -10px; margin-bottom: 10px; font-size:13px;'>
+                            {{ $message }}</span>
                     @enderror
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" value="{{old('email')}}" placeholder="Email" />
+                        <input type="email" id="email" name="email" value="{{ old('email') }}"
+                            placeholder="Email" />
                         @error('email')
-                        <span style='color: red; text-align: left; display: block; margin-top: -10px; margin-bottom: 10px; font-size:13px;'> {{$message}}</span>
-                    @enderror
+                            <span
+                                style='color: red; text-align: left; display: block; margin-top: -10px; margin-bottom: 10px; font-size:13px;'>
+                                {{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
@@ -147,7 +153,9 @@
                         <label for="UserImage">Add Image</label>
                         <input type="file" id="UserImage" name="UserImage" />
                         @error('UserImage')
-                        <span style='color: red; text-align: left; display: block; margin-top: -10px; margin-bottom: 10px; font-size:13px;'> {{$message}}</span>
+                            <span
+                                style='color: red; text-align: left; display: block; margin-top: -10px; margin-bottom: 10px; font-size:13px;'>
+                                {{ $message }}</span>
                         @enderror
                     </div>
                     <div class="form-group">
@@ -166,7 +174,7 @@
                     </div>
                 </div>
                 <hr />
-                <a href="#">Already Have An Account? Login To Sound Group </a>
+                <a href="{{ route('login') }}">Already Have An Account? Login To Sound Group </a>
             </div>
         </div>
     </div>

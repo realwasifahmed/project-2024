@@ -44,7 +44,7 @@ class FunctionalController extends Controller
 
     public function addMusics(Request $request)
     {
-        
+
         $request->validate([
             'AudioMusicIMage' => 'required',
             'AudioMusicFile' => 'required',
@@ -381,8 +381,7 @@ class FunctionalController extends Controller
         $credentials = $request->only('email', 'password');
         // dd($credentials);
         if (Auth::attempt($credentials)) {
-            // Authentication passed...
-            return redirect()->intended('/'); // Redirect to the dashboard or your desired page
+            return redirect()->intended('/'); // Redirect to the dashboard
         } else {
             return redirect()->route('login')->with('error', 'Invalid credentials');
         }
